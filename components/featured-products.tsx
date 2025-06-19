@@ -1,9 +1,11 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Eye } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { FeaturedProductsLoader } from "@/components/loader"
 import Link from "next/link"
 
 const featuredProducts = [
@@ -78,9 +80,35 @@ const productNames = {
 
 export function FeaturedProducts() {
   const { t, currentLang, formatPrice } = useLanguage()
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const getProductName = (nameKey: string) => {
     return productNames[currentLang][nameKey as keyof (typeof productNames)[typeof currentLang]] || nameKey
+  }
+
+  if (isLoading) {
+    return (
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8"></div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 tracking-wide">
+              {t("featuredProducts")}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">{t("featuredSubtitle")}</p>
+          </div>
+          <FeaturedProductsLoader />
+        </div>
+      </section>
+    )
   }
 
   return (

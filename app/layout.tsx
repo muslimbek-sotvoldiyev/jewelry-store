@@ -5,14 +5,14 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { LanguageProvider } from "@/components/language-provider"
+import { PageLoader } from "@/components/loader"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Zargarlik - Nafis zargarlik buyumlari",
+  title: "Zargarlik - Exquisite Jewelry Collection",
   description:
-    "Eng sifatli va chiroyli zargarlik buyumlarini toping. Uzuklar, marjonlar, sirg'alar va boshqa zargarlik buyumlari.",
-    generator: 'v0.dev'
+    "Discover the finest and most beautiful jewelry pieces. Rings, necklaces, earrings and other exquisite jewelry items.",
 }
 
 export default function RootLayout({
@@ -21,9 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="uz">
+    <html lang="en">
       <body className={inter.className}>
         <LanguageProvider>
+          <PageLoader />
           <Header />
           {children}
           <Footer />

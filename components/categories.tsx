@@ -1,8 +1,10 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-provider"
+import { CategoriesLoader } from "@/components/loader"
 import { ArrowRight } from "lucide-react"
 
 const categories = [
@@ -38,10 +40,35 @@ const categories = [
 
 export function Categories() {
   const { t } = useLanguage()
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleCategoryClick = (categoryId: string, categoryName: string) => {
-    // Kategoriya bosilganda analytics yoki boshqa logika
     console.log(`Category clicked: ${categoryName}`)
+  }
+
+  if (isLoading) {
+    return (
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8"></div>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 tracking-wide">
+              {t("categories")}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">{t("categoriesSubtitle")}</p>
+          </div>
+          <CategoriesLoader />
+        </div>
+      </section>
+    )
   }
 
   return (

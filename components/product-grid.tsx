@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Eye } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
+import { ProductGridLoader, Loader } from "@/components/loader"
 import Link from "next/link"
 
 interface ProductGridProps {
@@ -142,6 +143,28 @@ const productNames = {
 export function ProductGrid({ priceRange, selectedCategories, selectedMaterials }: ProductGridProps) {
   const { t, currentLang, formatPrice, currentCurrency } = useLanguage()
   const [sortBy, setSortBy] = useState("popularity")
+  const [isLoading, setIsLoading] = useState(true)
+  const [isFiltering, setIsFiltering] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 1200)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Show filtering loader when filters change
+  useEffect(() => {
+    if (!isLoading) {
+      setIsFiltering(true)
+      const timer = setTimeout(() => {
+        setIsFiltering(false)
+      }, 500)
+
+      return () => clearTimeout(timer)
+    }
+  }, [priceRange, selectedCategories, selectedMaterials, sortBy, isLoading])
 
   const filteredProducts = useMemo(() => {
     const rates = {
@@ -154,7 +177,6 @@ export function ProductGrid({ priceRange, selectedCategories, selectedMaterials 
     const rate = rates[currentCurrency]
 
     const filtered = allProducts.filter((product) => {
-      // Convert product price to current currency for comparison
       const convertedPrice = product.price * rate
 
       if (convertedPrice < priceRange[0] || convertedPrice > priceRange[1]) {
@@ -203,6 +225,18 @@ export function ProductGrid({ priceRange, selectedCategories, selectedMaterials 
     return categoryMap[category] || category
   }
 
+  if (isLoading) {
+    return <ProductGridLoader />
+  }
+
+  if (isFiltering) {
+    return (
+      <div className="min-h-[400px] flex items-center justify-center">
+        <Loader text="Filtering products..." />
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
@@ -240,7 +274,6 @@ export function ProductGrid({ priceRange, selectedCategories, selectedMaterials 
                   </span>
                 )}
 
-                {/* Only View Details Icon */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <Link href={`/product/${product.id}`}>
                     <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors hover:scale-110 duration-300 shadow-lg">
@@ -264,7 +297,6 @@ export function ProductGrid({ priceRange, selectedCategories, selectedMaterials 
                   <span className="text-lg md:text-xl font-bold text-amber-600">{formatPrice(product.price)}</span>
                 </div>
 
-                {/* Only View Details Button */}
                 <Link href={`/product/${product.id}`}>
                   <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 transition-all duration-300 tracking-wide">
                     {t("viewDetails")}

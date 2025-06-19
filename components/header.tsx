@@ -55,8 +55,8 @@ export function Header() {
             {[
               { href: "/", label: t("home") },
               { href: "/shop", label: t("shop") },
-              { href: "#about", label: t("about") },
-              { href: "#contact", label: t("contact") },
+              { href: "/#about", label: t("about") },
+              { href: "/#contact", label: t("contact") },
             ].map((item, index) => (
               <Link
                 key={item.href}
@@ -148,8 +148,8 @@ export function Header() {
               {[
                 { href: "/", label: t("home") },
                 { href: "/shop", label: t("shop") },
-                { href: "#about", label: t("about") },
-                { href: "#contact", label: t("contact") },
+                { href: "/#about", label: t("about") },
+                { href: "/#contact", label: t("contact") },
               ].map((item, index) => (
                 <Link
                   key={item.href}
