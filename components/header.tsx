@@ -126,7 +126,7 @@ function Header() {
                   }`}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=40&h=40&q=80"
+                    src="/logo.png"
                     alt="FERGANAGOLD Logo"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
