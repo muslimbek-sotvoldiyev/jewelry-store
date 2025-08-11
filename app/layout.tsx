@@ -1,18 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
+import { Playfair_Display, Inter } from "next/font/google"
 import { LanguageProvider } from "@/components/language-provider"
-import { PageLoader } from "@/components/loader"
+import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Zargarlik - Exquisite Jewelry Collection",
-  description:
-    "Discover the finest and most beautiful jewelry pieces. Rings, necklaces, earrings and other exquisite jewelry items.",
+  title: "FERGANAGOLD - Luxury Jewelry Store",
+  description: "Discover exquisite handcrafted jewelry with timeless elegance and exceptional quality.",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -21,14 +28,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <LanguageProvider>
-          <PageLoader />
-          <Header />
-          {children}
-          <Footer />
-        </LanguageProvider>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   )

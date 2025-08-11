@@ -1,195 +1,29 @@
 "use client"
 
 import { useState } from "react"
-import { useParams } from "next/navigation"
+import { notFound } from "next/navigation"
+import { ChevronLeft, ChevronRight, Share2, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Share2, ChevronLeft, ChevronRight } from "lucide-react"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { useLanguage } from "@/components/language-provider"
-import Link from "next/link"
+import { PRODUCTS } from "@/lib/data"
 
-// Updated product data to match ProductGrid
-const productData = {
-  1: {
-    nameKey: "goldRing",
-    price: 2500000,
-    images: [
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1603561596112-db2eca6c9b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "rings",
-    material: "gold",
-    description: "Yuqori sifatli 18k oltin uzuk. Zamonaviy dizayn va an'anaviy hunarmandchilik uyg'unligi.",
-  },
-  2: {
-    nameKey: "silverNecklace",
-    price: 1800000,
-    images: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "necklaces",
-    material: "silver",
-    description: "925 ayyor kumush marjon. Nafis va zamonaviy dizayn.",
-  },
-  3: {
-    nameKey: "diamondEarrings",
-    price: 5500000,
-    images: [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "earrings",
-    material: "diamond",
-    description: "Brilliant toshli sirg'alar. Yuqori sifat va noyob dizayn.",
-  },
-  4: {
-    nameKey: "goldBracelet",
-    price: 3200000,
-    images: [
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "bracelets",
-    material: "gold",
-    description: "18k oltin bilakuzuk. Klassik va zamonaviy uslub.",
-  },
-  5: {
-    nameKey: "platinumRing",
-    price: 4500000,
-    images: [
-      "https://images.unsplash.com/photo-1603561596112-db2eca6c9b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "rings",
-    material: "platinum",
-    description: "Yuqori sifatli platina uzuk. Noyob va bardoshli material.",
-  },
-  6: {
-    nameKey: "goldChain",
-    price: 2800000,
-    images: [
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "necklaces",
-    material: "gold",
-    description: "18k oltin zanjir. Klassik va zamonaviy dizayn.",
-  },
-  7: {
-    nameKey: "diamondRing",
-    price: 8500000,
-    images: [
-      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1603561596112-db2eca6c9b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "rings",
-    material: "diamond",
-    description: "Premium brilliant toshli uzuk. Eng yuqori sifat va noyob dizayn.",
-  },
-  8: {
-    nameKey: "silverEarrings",
-    price: 1200000,
-    images: [
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    ],
-    category: "earrings",
-    material: "silver",
-    description: "925 ayyor kumush sirg'alar. Nafis va zamonaviy uslub.",
-  },
+interface ProductPageProps {
+  params: {
+    id: string
+  }
 }
 
-const productNames = {
-  uz: {
-    goldRing: "Oltin uzuk",
-    silverNecklace: "Kumush marjon",
-    diamondEarrings: "Brilliant sirg'a",
-    goldBracelet: "Oltin bilakuzuk",
-    platinumRing: "Platina uzuk",
-    goldChain: "Oltin zanjir",
-    diamondRing: "Brilliant uzuk",
-    silverEarrings: "Kumush sirg'a",
-  },
-  ru: {
-    goldRing: "Золотое кольцо",
-    silverNecklace: "Серебряное ожерелье",
-    diamondEarrings: "Бриллиантовые серьги",
-    goldBracelet: "Золотой браслет",
-    platinumRing: "Платиновое кольцо",
-    goldChain: "Золотая цепь",
-    diamondRing: "Бриллиантовое кольцо",
-    silverEarrings: "Серебряные серьги",
-  },
-  en: {
-    goldRing: "Gold Ring",
-    silverNecklace: "Silver Necklace",
-    diamondEarrings: "Diamond Earrings",
-    goldBracelet: "Gold Bracelet",
-    platinumRing: "Platinum Ring",
-    goldChain: "Gold Chain",
-    diamondRing: "Diamond Ring",
-    silverEarrings: "Silver Earrings",
-  },
-  tr: {
-    goldRing: "Altın Yüzük",
-    silverNecklace: "Gümüş Kolye",
-    diamondEarrings: "Pırlanta Küpe",
-    goldBracelet: "Altın Bilezik",
-    platinumRing: "Platin Yüzük",
-    goldChain: "Altın Zincir",
-    diamondRing: "Pırlanta Yüzük",
-    silverEarrings: "Gümüş Küpe",
-  },
-}
-
-export default function ProductPage() {
-  const params = useParams()
-  const { t, currentLang, formatPrice } = useLanguage()
-  const productId = params.id as string
+export default function ProductPage({ params }: ProductPageProps) {
+  const { t, formatPrice } = useLanguage()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
+  const [isShareOpen, setIsShareOpen] = useState(false)
 
-  const product = productData[productId as keyof typeof productData]
+  const product = PRODUCTS.find((p) => p.id === params.id)
 
   if (!product) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Mahsulot topilmadi</h1>
-          <Link href="/shop">
-            <Button>Do'konga qaytish</Button>
-          </Link>
-        </div>
-      </div>
-    )
-  }
-
-  const getProductName = (nameKey: string) => {
-    return productNames[currentLang][nameKey as keyof (typeof productNames)[typeof currentLang]] || nameKey
-  }
-
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: getProductName(product.nameKey),
-          text: `${getProductName(product.nameKey)} - ${formatPrice(product.price)}`,
-          url: window.location.href,
-        })
-      } catch (error) {
-        console.log("Share cancelled")
-      }
-    } else {
-      // Fallback for browsers that don't support Web Share API
-      navigator.clipboard.writeText(window.location.href)
-      alert("Havola nusxalandi!")
-    }
+    notFound()
   }
 
   const nextImage = () => {
@@ -200,73 +34,72 @@ export default function ProductPage() {
     setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length)
   }
 
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index)
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: t(product.nameKey),
+          text: t(product.descriptionKey),
+          url: window.location.href,
+        })
+      } catch (error) {
+        console.log("Error sharing:", error)
+      }
+    } else {
+      setIsShareOpen(true)
+    }
+  }
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+    setIsShareOpen(false)
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-24">
-      <div className="container mx-auto px-4 py-8">
-        {/* Back Button */}
-        <Link
-          href="/shop"
-          className="inline-flex items-center text-amber-600 hover:text-amber-700 mb-8 transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Do'konga qaytish
-        </Link>
-
+    <main className="bg-white pt-28 md:pt-32">
+      <div className="container mx-auto px-6 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Product Images Swiper */}
-          <div className="space-y-4">
-            {/* Main Image */}
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
+          {/* Images */}
+          <div>
+            <div className="aspect-square overflow-hidden rounded-lg mb-4 relative cursor-pointer">
               <img
                 src={product.images[currentImageIndex] || "/placeholder.svg"}
-                alt={`${getProductName(product.nameKey)} ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover transition-all duration-500"
+                alt={t(product.nameKey)}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                onClick={() => setIsImageModalOpen(true)}
               />
-
-              {/* Navigation Arrows */}
               {product.images.length > 1 && (
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2 transition-all duration-300"
                   >
-                    <ChevronLeft className="h-5 w-5 text-gray-700" />
+                    <ChevronLeft className="h-5 w-5" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2 transition-all duration-300"
                   >
-                    <ChevronRight className="h-5 w-5 text-gray-700" />
+                    <ChevronRight className="h-5 w-5" />
                   </button>
                 </>
               )}
-
-              {/* Image Counter */}
-              {product.images.length > 1 && (
-                <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-                  {currentImageIndex + 1} / {product.images.length}
-                </div>
-              )}
             </div>
 
-            {/* Thumbnail Images */}
+            {/* Thumbnails */}
             {product.images.length > 1 && (
-              <div className="grid grid-cols-4 gap-3">
+              <div className="flex space-x-2">
                 {product.images.map((image, index) => (
                   <button
                     key={index}
-                    onClick={() => goToImage(index)}
-                    className={`aspect-square overflow-hidden rounded-lg transition-all duration-200 ${
-                      index === currentImageIndex ? "ring-2 ring-amber-500 ring-offset-2" : "hover:opacity-80"
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-20 h-20 rounded overflow-hidden border-2 transition-all duration-300 ${
+                      index === currentImageIndex ? "border-black" : "border-gray-300"
                     }`}
                   >
                     <img
                       src={image || "/placeholder.svg"}
-                      alt={`${getProductName(product.nameKey)} ${index + 1}`}
+                      alt={`${t(product.nameKey)} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -276,42 +109,154 @@ export default function ProductPage() {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-8">
-            <div>
-              <h1 className="text-4xl font-serif font-bold text-gray-900 mb-6">{getProductName(product.nameKey)}</h1>
-              <p className="text-6xl font-bold text-amber-600 mb-8">{formatPrice(product.price)}</p>
-            </div>
-
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-gray-900">Tavsif</h3>
-              <p className="text-gray-600 leading-relaxed text-lg">{product.description}</p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 py-6 border-t border-gray-200">
-              <div>
-                <span className="text-sm text-gray-500 uppercase tracking-wide">Kategoriya</span>
-                <p className="font-semibold text-gray-900 text-lg mt-1">{t(product.category)}</p>
-              </div>
-              <div>
-                <span className="text-sm text-gray-500 uppercase tracking-wide">Material</span>
-                <p className="font-semibold text-gray-900 text-lg mt-1">{t(product.material)}</p>
-              </div>
-            </div>
-
-            {/* Share Button */}
-            <div className="pt-6">
-              <Button
-                onClick={handleShare}
-                variant="outline"
-                className="w-full border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white py-4 text-lg font-semibold transition-all duration-300"
-              >
-                <Share2 className="h-5 w-5 mr-2" />
-                Ulashish
+          <div>
+            <div className="flex items-start justify-between mb-4">
+              <h1 className="text-3xl lg:text-4xl font-light tracking-wide">{t(product.nameKey)}</h1>
+              <Button variant="outline" size="sm" onClick={handleShare} className="ml-4 bg-transparent">
+                <Share2 className="h-4 w-4 mr-2" />
+                {t("share")}
               </Button>
+            </div>
+
+            <p className="text-2xl lg:text-3xl font-light mb-6">{formatPrice(product.priceUZS)}</p>
+            <p className="text-gray-600 mb-8 leading-relaxed text-lg">{t(product.descriptionKey)}</p>
+
+            {/* Specifications */}
+            <div className="space-y-4 mb-8">
+              <h3 className="text-lg font-medium">{t("specifications")}</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {Object.entries(product.specifications).map(
+                  ([key, value]) =>
+                    value && (
+                      <div key={key} className="flex justify-between py-2 border-b border-gray-100">
+                        <span className="text-sm font-medium capitalize">{t(key)}:</span>
+                        <span className="text-sm text-gray-600">{value}</span>
+                      </div>
+                    ),
+                )}
+                <div className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="text-sm font-medium">{t("material")}:</span>
+                  <span className="text-sm text-gray-600 capitalize">{t(product.material)}</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="text-sm font-medium">{t("category")}:</span>
+                  <span className="text-sm text-gray-600 capitalize">{t(product.category)}</span>
+                </div>
+                <div className="flex justify-between py-2 border-b border-gray-100">
+                  <span className="text-sm font-medium">{t("availability")}:</span>
+                  <span className={`text-sm ${product.inStock ? "text-green-600" : "text-red-600"}`}>
+                    {product.inStock ? t("inStock") : t("outOfStock")}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Product Details */}
+            <div className="border-t pt-8">
+              <h3 className="text-lg font-medium mb-4">Product Details</h3>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p>• Handcrafted with premium materials</p>
+                <p>• Comes with authenticity certificate</p>
+                <p>• Free shipping and returns</p>
+                <p>• 1-year warranty included</p>
+                <p>• Professional cleaning service available</p>
+                <p>• Custom sizing available upon request</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
+        <DialogContent className="max-w-4xl p-0">
+          <div className="relative">
+            <img
+              src={product.images[currentImageIndex] || "/placeholder.svg"}
+              alt={t(product.nameKey)}
+              className="w-full h-auto"
+            />
+            <button
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute top-4 right-4 bg-white/80 hover:bg-white text-black rounded-full p-2"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            {product.images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Share Modal */}
+      <Dialog open={isShareOpen} onOpenChange={setIsShareOpen}>
+        <DialogContent className="max-w-md">
+          <div className="p-6">
+            <h3 className="text-lg font-medium mb-4">
+              {t("share")} {t(product.nameKey)}
+            </h3>
+            <div className="space-y-3">
+              <Button
+                variant="outline"
+                className="w-full justify-start bg-transparent"
+                onClick={() => copyToClipboard(window.location.href)}
+              >
+                Copy Link
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full justify-start bg-transparent"
+                onClick={() =>
+                  window.open(
+                    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`,
+                    "_blank",
+                  )
+                }
+              >
+                Share on Facebook
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full justify-start bg-transparent"
+                onClick={() =>
+                  window.open(
+                    `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(t(product.nameKey))}`,
+                    "_blank",
+                  )
+                }
+              >
+                Share on Twitter
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full justify-start bg-transparent"
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/?text=${encodeURIComponent(`${t(product.nameKey)} - ${window.location.href}`)}`,
+                    "_blank",
+                  )
+                }
+              >
+                Share on WhatsApp
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </main>
   )
 }

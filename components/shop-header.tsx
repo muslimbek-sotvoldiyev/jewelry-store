@@ -5,15 +5,21 @@ import { useLanguage } from "@/components/language-provider"
 export function ShopHeader() {
   const { t } = useLanguage()
 
+  // Clean, minimal header without overflowing category headings
   return (
-    <div className="bg-gradient-to-r from-black to-gray-900 border-b border-amber-500/20">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center">
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8"></div>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 tracking-wide">{t("shopTitle")}</h1>
-          <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">{t("shopSubtitle")}</p>
-        </div>
+    <section aria-labelledby="shop-title" className="bg-white border-b border-gray-100">
+      <div className="container mx-auto px-6 py-10 md:py-16 text-center">
+        <p className="cartier-text uppercase tracking-[0.2em] text-[11px] text-gray-500 mb-3">
+          {t("shopBreadcrumb") ?? "Jewelry Shop"}
+        </p>
+        <h1 id="shop-title" className="luxury-heading text-3xl md:text-5xl font-light tracking-wide mb-3">
+          {t("jewelryShop") ?? "Jewelry Shop"}
+        </h1>
+        <div className="w-16 h-px bg-gray-300 mx-auto mb-4" aria-hidden="true"></div>
+        <p className="luxury-text text-sm md:text-base text-gray-600">
+          {t("shopTagline") ?? "Find the finest jewelry pieces"}
+        </p>
       </div>
-    </div>
+    </section>
   )
 }

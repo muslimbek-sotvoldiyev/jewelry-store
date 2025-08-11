@@ -1,147 +1,248 @@
 "use client"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Slider } from "@/components/ui/slider"
+
+import { useState, useEffect } from "react"
+import { ChevronDown, Filter } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Slider } from "@/components/ui/slider"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useLanguage } from "@/components/language-provider"
+import type { Category } from "@/lib/data"
 
 interface CategoryFilterProps {
+  categories: Category[]
+  materials: { id: string; nameKey: string }[]
+  selectedCategory: string
+  selectedMaterial: string
   priceRange: [number, number]
-  setPriceRange: (range: [number, number]) => void
-  selectedCategories: string[]
-  setSelectedCategories: (categories: string[]) => void
-  selectedMaterials: string[]
-  setSelectedMaterials: (materials: string[]) => void
-  onClearFilters: () => void
+  sortBy: string
+  onCategoryChange: (category: string) => void
+  onMaterialChange: (material: string) => void
+  onPriceRangeChange: (range: [number, number]) => void
+  onSortChange: (sort: string) => void
 }
 
-export function CategoryFilter({
+function FilterContent({
+  categories,
+  materials,
+  selectedCategory,
+  selectedMaterial,
   priceRange,
-  setPriceRange,
-  selectedCategories,
-  setSelectedCategories,
-  selectedMaterials,
-  setSelectedMaterials,
-  onClearFilters,
+  sortBy,
+  onCategoryChange,
+  onMaterialChange,
+  onPriceRangeChange,
+  onSortChange,
 }: CategoryFilterProps) {
-  const { t, formatPrice, currentCurrency } = useLanguage()
+  const { t, formatPrice } = useLanguage()
+  const [isCategoryOpen, setIsCategoryOpen] = useState(true)
+  const [isMaterialOpen, setIsMaterialOpen] = useState(true)
+  const [isPriceOpen, setIsPriceOpen] = useState(true)
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [selectedMaterials, setSelectedMaterials] = useState<string[]>([])
 
-  const categories = [
-    { id: "rings", name: t("rings"), count: 45 },
-    { id: "necklaces", name: t("necklaces"), count: 32 },
-    { id: "earrings", name: t("earrings"), count: 28 },
-    { id: "bracelets", name: t("bracelets"), count: 19 },
-    { id: "watches", name: t("watches"), count: 15 },
-  ]
+  useEffect(() => {
+    setSelectedCategories(selectedCategory ? [selectedCategory] : [])
+  }, [selectedCategory])
 
-  const materials = [
-    { id: "gold", name: t("gold"), count: 67 },
-    { id: "silver", name: t("silver"), count: 43 },
-    { id: "platinum", name: t("platinum"), count: 12 },
-    { id: "diamond", name: t("diamond"), count: 23 },
-  ]
+  useEffect(() => {
+    setSelectedMaterials(selectedMaterial ? [selectedMaterial] : [])
+  }, [selectedMaterial])
 
-  // Convert price range based on current currency
-  const getConvertedPriceRange = () => {
-    const rates = {
-      som: 1,
-      uzs: 1,
-      rub: 0.35,
-      usd: 0.000085,
-    }
-
-    const rate = rates[currentCurrency]
-    const minPrice = Math.round(500000 * rate)
-    const maxPrice = Math.round(10000000 * rate)
-
-    return { min: minPrice, max: maxPrice, step: Math.round(100000 * rate) }
+  const clearFilters = () => {
+    onCategoryChange("")
+    onMaterialChange("")
+    onPriceRangeChange([0, 50000000])
+    onSortChange("name")
+    setSelectedCategories([])
+    setSelectedMaterials([])
   }
 
-  const { min, max, step } = getConvertedPriceRange()
+  const handleCategoryToggle = (categoryId: string, checked: boolean) => {
+    if (checked) {
+      setSelectedCategories([categoryId]) // Only allow one category at a time
+      onCategoryChange(categoryId)
+    } else {
+      setSelectedCategories([])
+      onCategoryChange("")
+    }
+  }
+
+  const handleMaterialToggle = (materialId: string, checked: boolean) => {
+    if (checked) {
+      setSelectedMaterials([materialId]) // Only allow one material at a time
+      onMaterialChange(materialId)
+    } else {
+      setSelectedMaterials([])
+      onMaterialChange("")
+    }
+  }
+
+  const selectAllCategories = () => {
+    setSelectedCategories([])
+    onCategoryChange("")
+  }
+
+  const selectAllMaterials = () => {
+    setSelectedMaterials([])
+    onMaterialChange("")
+  }
 
   return (
-    <div className="space-y-6 hidden lg:block">
-      <Card>
-        <CardHeader>
-          <CardTitle>{t("categories")}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
+    <div className="space-y-6">
+      {/* Sort */}
+      <div>
+        <h3 className="font-medium mb-3 text-sm lg:text-base">{t("sortBy") || "Saralash"}</h3>
+        <Select value={sortBy} onValueChange={onSortChange}>
+          <SelectTrigger className="text-sm">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="name">{t("name") || "Nomi"}</SelectItem>
+            <SelectItem value="price-low">{t("priceLowHigh") || "Narx: Pastdan yuqoriga"}</SelectItem>
+            <SelectItem value="price-high">{t("priceHighLow") || "Narx: Yuqoridan pastga"}</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Categories */}
+      <Collapsible open={isCategoryOpen} onOpenChange={setIsCategoryOpen}>
+        <CollapsibleTrigger className="flex items-center justify-between w-full">
+          <h3 className="font-medium text-sm lg:text-base">{t("categories") || "Kategoriyalar"}</h3>
+          <ChevronDown className={`h-4 w-4 transition-transform ${isCategoryOpen ? "rotate-180" : ""}`} />
+        </CollapsibleTrigger>
+        <CollapsibleContent className="space-y-3 mt-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="all-categories"
+                checked={selectedCategories.length === 0}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    selectAllCategories()
+                  }
+                }}
+              />
+              <label htmlFor="all-categories" className="text-xs lg:text-sm cursor-pointer">
+                {t("allCategories") || "Barcha kategoriyalar"}
+              </label>
+            </div>
+          </div>
           {categories.map((category) => (
             <div key={category.id} className="flex items-center space-x-2">
               <Checkbox
-                id={category.id}
+                id={`category-${category.id}`}
                 checked={selectedCategories.includes(category.id)}
-                onCheckedChange={(checked) => {
-                  if (checked) {
-                    setSelectedCategories([...selectedCategories, category.id])
-                  } else {
-                    setSelectedCategories(selectedCategories.filter((id) => id !== category.id))
-                  }
-                }}
+                onCheckedChange={(checked) => handleCategoryToggle(category.id, checked as boolean)}
               />
-              <label
-                htmlFor={category.id}
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer flex-1"
-              >
-                {category.name} ({category.count})
+              <label htmlFor={`category-${category.id}`} className="text-xs lg:text-sm cursor-pointer">
+                {t(category.nameKey)}
               </label>
             </div>
           ))}
-        </CardContent>
-      </Card>
+        </CollapsibleContent>
+      </Collapsible>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>{t("priceRange")}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <Slider
-            value={priceRange}
-            onValueChange={(value) => setPriceRange(value as [number, number])}
-            max={max}
-            min={min}
-            step={step}
-            className="w-full"
-          />
-          <div className="flex justify-between text-sm text-gray-600">
-            <span>{formatPrice(priceRange[0])}</span>
-            <span>{formatPrice(priceRange[1])}</span>
+      {/* Materials */}
+      <Collapsible open={isMaterialOpen} onOpenChange={setIsMaterialOpen}>
+        <CollapsibleTrigger className="flex items-center justify-between w-full">
+          <h3 className="font-medium text-sm lg:text-base">{t("materials") || "Materiallar"}</h3>
+          <ChevronDown className={`h-4 w-4 transition-transform ${isMaterialOpen ? "rotate-180" : ""}`} />
+        </CollapsibleTrigger>
+        <CollapsibleContent className="space-y-3 mt-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="all-materials"
+                checked={selectedMaterials.length === 0}
+                onCheckedChange={(checked) => {
+                  if (checked) {
+                    selectAllMaterials()
+                  }
+                }}
+              />
+              <label htmlFor="all-materials" className="text-xs lg:text-sm cursor-pointer">
+                {t("allMaterials") || "Barcha materiallar"}
+              </label>
+            </div>
           </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>{t("material")}</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
           {materials.map((material) => (
             <div key={material.id} className="flex items-center space-x-2">
               <Checkbox
-                id={material.id}
+                id={`material-${material.id}`}
                 checked={selectedMaterials.includes(material.id)}
-                onCheckedChange={(checked) => {
-                  if (checked) {
-                    setSelectedMaterials([...selectedMaterials, material.id])
-                  } else {
-                    setSelectedMaterials(selectedMaterials.filter((id) => id !== material.id))
-                  }
-                }}
+                onCheckedChange={(checked) => handleMaterialToggle(material.id, checked as boolean)}
               />
-              <label
-                htmlFor={material.id}
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer flex-1"
-              >
-                {material.name} ({material.count})
+              <label htmlFor={`material-${material.id}`} className="text-xs lg:text-sm cursor-pointer">
+                {t(material.nameKey)}
               </label>
             </div>
           ))}
-        </CardContent>
-      </Card>
+        </CollapsibleContent>
+      </Collapsible>
 
-      <Button className="w-full" variant="outline" onClick={onClearFilters}>
-        {t("clearFilters")}
+      {/* Price Range */}
+      <Collapsible open={isPriceOpen} onOpenChange={setIsPriceOpen}>
+        <CollapsibleTrigger className="flex items-center justify-between w-full">
+          <h3 className="font-medium text-sm lg:text-base">{t("priceRange") || "Narx oralig'i"}</h3>
+          <ChevronDown className={`h-4 w-4 transition-transform ${isPriceOpen ? "rotate-180" : ""}`} />
+        </CollapsibleTrigger>
+        <CollapsibleContent className="mt-3">
+          <div className="px-3">
+            <Slider
+              value={priceRange}
+              onValueChange={(value) => onPriceRangeChange(value as [number, number])}
+              max={50000000}
+              min={0}
+              step={1000000}
+              className="mb-4"
+            />
+            <div className="flex justify-between text-xs lg:text-sm text-gray-600">
+              <span>{formatPrice(priceRange[0])}</span>
+              <span>{formatPrice(priceRange[1])}</span>
+            </div>
+          </div>
+        </CollapsibleContent>
+      </Collapsible>
+
+      {/* Clear Filters */}
+      <Button variant="outline" onClick={clearFilters} className="w-full bg-transparent text-xs lg:text-sm">
+        <Filter className="h-4 w-4 mr-2" />
+        {t("clearFilters") || "Filtrlarni tozalash"}
       </Button>
     </div>
+  )
+}
+
+export function CategoryFilter(props: CategoryFilterProps) {
+  const { t } = useLanguage()
+
+  return (
+    <>
+      {/* Desktop Filter */}
+      <div className="hidden lg:block">
+        <FilterContent {...props} />
+      </div>
+
+      {/* Mobile Filter */}
+      <div className="lg:hidden">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" className="w-full mb-4 bg-transparent text-sm">
+              <Filter className="h-4 w-4 mr-2" />
+              {t("filters") || "Filtrlar"}
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-80 overflow-y-auto">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-medium">{t("filters") || "Filtrlar"}</h2>
+            </div>
+            <FilterContent {...props} />
+          </SheetContent>
+        </Sheet>
+      </div>
+    </>
   )
 }

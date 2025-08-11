@@ -1,188 +1,53 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Eye } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
-import { FeaturedProductsLoader } from "@/components/loader"
 import Link from "next/link"
-
-const featuredProducts = [
-  {
-    id: 1,
-    nameKey: "goldRing",
-    price: 2500000,
-    image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    isNew: true,
-    category: "rings",
-    material: "gold",
-  },
-  {
-    id: 2,
-    nameKey: "silverNecklace",
-    price: 1800000,
-    image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    isNew: false,
-    category: "necklaces",
-    material: "silver",
-  },
-  {
-    id: 3,
-    nameKey: "diamondEarrings",
-    price: 5500000,
-    image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    isNew: true,
-    category: "earrings",
-    material: "diamond",
-  },
-  {
-    id: 4,
-    nameKey: "goldBracelet",
-    price: 3200000,
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-    isNew: false,
-    category: "bracelets",
-    material: "gold",
-  },
-]
-
-const productNames = {
-  uz: {
-    goldRing: "Oltin uzuk",
-    silverNecklace: "Kumush marjon",
-    diamondEarrings: "Brilliant sirg'a",
-    goldBracelet: "Oltin bilakuzuk",
-  },
-  ru: {
-    goldRing: "Золотое кольцо",
-    silverNecklace: "Серебряное ожерелье",
-    diamondEarrings: "Бриллиантовые серьги",
-    goldBracelet: "Золотой браслет",
-  },
-  en: {
-    goldRing: "Gold Ring",
-    silverNecklace: "Silver Necklace",
-    diamondEarrings: "Diamond Earrings",
-    goldBracelet: "Gold Bracelet",
-  },
-  tr: {
-    goldRing: "Altın Yüzük",
-    silverNecklace: "Gümüş Kolye",
-    diamondEarrings: "Pırlanta Küpe",
-    goldBracelet: "Altın Bilezik",
-  },
-}
+import { useLanguage } from "@/components/language-provider"
+import { PRODUCTS } from "@/lib/data"
 
 export function FeaturedProducts() {
-  const { t, currentLang, formatPrice } = useLanguage()
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  const getProductName = (nameKey: string) => {
-    return productNames[currentLang][nameKey as keyof (typeof productNames)[typeof currentLang]] || nameKey
-  }
-
-  if (isLoading) {
-    return (
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 tracking-wide">
-              {t("featuredProducts")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">{t("featuredSubtitle")}</p>
-          </div>
-          <FeaturedProductsLoader />
-        </div>
-      </section>
-    )
-  }
+  const { t, formatPrice } = useLanguage()
+  const featuredProducts = PRODUCTS.filter((product) => product.featured).slice(0, 4)
 
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-8"></div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 tracking-wide">
-            {t("featuredProducts")}
+    <section className="py-12 lg:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl lg:text-3xl font-serif font-light tracking-[0.2em] mb-4">
+            {t("featuredProducts") || "TANIQLI MAHSULOTLAR"}
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">{t("featuredSubtitle")}</p>
+          <div className="w-16 h-px bg-black mx-auto mb-4" />
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm lg:text-base">
+            {t("featuredDescription") || "Eng mashhur va ajoyib zargarlik buyumlarimizni kashf eting"}
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {featuredProducts.map((product) => (
-            <Card
-              key={product.id}
-              className="group hover:shadow-2xl transition-all duration-500 bg-white border-0 overflow-hidden"
-            >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={product.image || "/placeholder.svg"}
-                    alt={getProductName(product.nameKey)}
-                    className="w-full h-48 md:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  {product.isNew && (
-                    <span className="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 text-xs font-bold tracking-wide">
-                      {t("new")}
-                    </span>
-                  )}
-
-                  {/* Only View Details Icon */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <Link href={`/product/${product.id}`}>
-                      <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors hover:scale-110 duration-300 shadow-lg">
-                        <Eye className="h-4 w-4 text-gray-700 hover:text-amber-600 transition-colors" />
-                      </button>
-                    </Link>
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-
-                <div className="p-4 md:p-6">
-                  <h3 className="text-sm md:text-lg font-serif font-bold text-gray-900 mb-4 line-clamp-2">
-                    {getProductName(product.nameKey)}
-                  </h3>
-
-                  <div className="mb-6">
-                    <span className="text-lg md:text-xl font-bold text-amber-600">{formatPrice(product.price)}</span>
-                  </div>
-
-                  {/* Only View Details Button */}
-                  <Link href={`/product/${product.id}`}>
-                    <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 transition-all duration-300 tracking-wide">
-                      {t("viewDetails")}
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
+            <Link key={product.id} href={`/product/${product.id}`} className="group cursor-pointer">
+              <div className="aspect-square overflow-hidden mb-2 lg:mb-3 bg-gray-50 rounded-lg">
+                <img
+                  src={product.image || "/placeholder.svg"}
+                  alt={t(product.nameKey)}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="font-medium text-xs lg:text-sm mb-1 group-hover:text-gray-600 transition-colors line-clamp-2">
+                  {t(product.nameKey)}
+                </h3>
+                <p className="text-gray-600 text-xs mb-1">{t(product.material)}</p>
+                <p className="font-light text-sm lg:text-base">{formatPrice(product.priceUZS)}</p>
+              </div>
+            </Link>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <Link href="/shop">
-            <Button
-              variant="outline"
-              size="lg"
-              className="px-12 py-4 text-lg font-semibold border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-all duration-300 tracking-wide"
-            >
-              {t("viewAll")}
-            </Button>
+        <div className="text-center mt-8 lg:mt-12">
+          <Link
+            href="/shop"
+            className="inline-block border border-black px-6 py-2 lg:px-8 lg:py-3 hover:bg-black hover:text-white transition-all duration-300 tracking-wider text-sm"
+          >
+            {t("viewAll") || "BARCHASINI KO'RISH"}
           </Link>
         </div>
       </div>

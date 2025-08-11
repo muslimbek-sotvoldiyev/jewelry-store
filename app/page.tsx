@@ -1,17 +1,28 @@
+"use client"
+
+import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { Categories } from "@/components/categories"
 import { FeaturedProducts } from "@/components/featured-products"
+import { Categories } from "@/components/categories"
+import { RecommendedCollection } from "@/components/recommended-collection"
 import { About } from "@/components/about"
 import { Contact } from "@/components/contact"
+import { Footer } from "@/components/footer"
+import { LanguageProvider } from "@/components/language-provider"
 
 export default function HomePage() {
   return (
-    <main>
-      <Hero />
-      <Categories />
-      <FeaturedProducts />
-      <About />
-      <Contact />
-    </main>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Hero />
+        <FeaturedProducts />
+        <Categories />
+        <RecommendedCollection />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }

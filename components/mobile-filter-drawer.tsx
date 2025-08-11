@@ -41,7 +41,6 @@ export function MobileFilterDrawer({
     setIsOpen(false)
   }
 
-  // Get converted price range based on current currency
   const getConvertedPriceRange = () => {
     const rates = {
       som: 1,
@@ -62,7 +61,7 @@ export function MobileFilterDrawer({
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" className="lg:hidden">
+        <Button variant="outline" className="lg:hidden bg-transparent">
           <Filter className="h-4 w-4 mr-2" />
           {t("filters")}
         </Button>
@@ -73,7 +72,6 @@ export function MobileFilterDrawer({
         </SheetHeader>
 
         <div className="space-y-6 mt-6">
-          {/* Categories */}
           <div>
             <h4 className="font-semibold mb-3">{t("categories")}</h4>
             <div className="space-y-3">
@@ -101,7 +99,6 @@ export function MobileFilterDrawer({
             </div>
           </div>
 
-          {/* Price Range */}
           <div>
             <h4 className="font-semibold mb-3">{t("priceRange")}</h4>
             <div className="space-y-4">
@@ -120,7 +117,6 @@ export function MobileFilterDrawer({
             </div>
           </div>
 
-          {/* Materials */}
           <div>
             <h4 className="font-semibold mb-3">{t("material")}</h4>
             <div className="space-y-3">
@@ -148,12 +144,11 @@ export function MobileFilterDrawer({
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="space-y-3 pt-4 border-t">
             <Button onClick={handleApplyFilters} className="w-full bg-amber-600 hover:bg-amber-700">
               {t("applyFilters")}
             </Button>
-            <Button onClick={onClearFilters} variant="outline" className="w-full">
+            <Button onClick={onClearFilters} variant="outline" className="w-full bg-transparent">
               {t("clearFilters")}
             </Button>
           </div>
