@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
-export function Footer() {
+export default function Footer() {
   const { t } = useLanguage()
 
   return (

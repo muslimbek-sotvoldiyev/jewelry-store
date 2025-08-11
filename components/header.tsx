@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/components/language-provider"
 import { CATEGORIES, PRODUCTS } from "@/lib/data"
 
-export function Header() {
+function Header() {
   const { language, setLanguage, t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
@@ -572,3 +572,5 @@ export function Header() {
     </>
   )
 }
+
+export default Header
