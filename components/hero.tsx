@@ -1,125 +1,61 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
-
-const slides = [
-  {
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1920&q=80",
-    titleKey: "luxuryJewelry",
-    subtitleKey: "timelessElegance",
-    ctaKey: "shopNow",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80",
-    titleKey: "handcraftedPerfection",
-    subtitleKey: "exceptionalQuality",
-    ctaKey: "exploreCollection",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1920&q=80",
-    titleKey: "exclusiveDesigns",
-    subtitleKey: "uniqueCreations",
-    ctaKey: "discoverMore",
-  },
-]
+import { Button } from "@/components/ui/button"
 
 export function Hero() {
   const { t } = useLanguage()
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-
-    return () => clearInterval(timer)
-  }, [])
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          />
-          <div className="absolute inset-0 bg-black/40" />
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=2000&q=80')",
+        }}
+      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/75 via-background/60 to-background/75" />
 
-          <div className="relative h-full flex items-center justify-center text-center text-white">
-            <div className="max-w-2xl mx-auto px-6 backdrop-blur-sm bg-white/5 rounded-2xl p-8 border border-white/10">
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-[0.2em] mb-3">
-                {t(slide.titleKey) || "LUXURY JEWELRY"}
-              </h1>
-              <p className="text-sm md:text-base lg:text-lg font-light tracking-wider mb-5 opacity-90">
-                {t(slide.subtitleKey) || "Timeless Elegance"}
-              </p>
-              <Button size="sm" className="bg-white text-black hover:bg-gray-100 px-5 py-2 text-sm tracking-wider">
-                {t(slide.ctaKey) || "SHOP NOW"}
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center max-w-3xl">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          <div className="space-y-2 sm:space-y-3 md:space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-light tracking-[0.1em] sm:tracking-[0.12em] md:tracking-[0.15em] text-foreground text-balance">
+              Luxury Jewelry Crafted with Excellence
+            </h1>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-primary tracking-wide">
+              Handcrafted Elegance Since 1994
+            </h2>
+          </div>
+
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
+            Experience timeless elegance through our exquisite collection of handcrafted jewelry pieces. Premium
+            quality, authentic materials, and expert craftsmanship in every piece.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 md:pt-6 px-4">
+            <a href="#about" className="w-full sm:w-auto inline-block">
+              <Button className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium tracking-wide">
+                {t("about") || "Batafsil"}
               </Button>
-            </div>
+            </a>
+            <a href="#contact" className="w-full sm:w-auto inline-block">
+              <Button
+                variant="outline"
+                className="w-full sm:w-auto px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-medium tracking-wide border-primary text-primary hover:bg-primary/5 bg-transparent"
+              >
+                {t("contact") || "Bog'lanish"}
+              </Button>
+            </a>
           </div>
         </div>
-      ))}
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-all duration-300 backdrop-blur-sm"
-      >
-        <ChevronLeft className="h-5 w-5" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-all duration-300 backdrop-blur-sm"
-      >
-        <ChevronRight className="h-5 w-5" />
-      </button>
-
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3">
-        {/* Progress Bar with gradient */}
-        <div className="w-24 h-1 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
-          <div
-            className="h-full bg-gradient-to-r from-white via-gray-200 to-white transition-all duration-500 ease-out rounded-full"
-            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-          />
-        </div>
-
-        {/* Animated Slide Indicators */}
-        <div className="flex space-x-1.5">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`transition-all duration-500 ease-out ${
-                index === currentSlide
-                  ? "w-6 h-1.5 bg-white rounded-full shadow-lg"
-                  : "w-1.5 h-1.5 bg-white/40 rounded-full hover:bg-white/60 hover:scale-125"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Slide Counter with modern styling */}
-        <div className="text-white/80 text-xs font-light tracking-[0.2em] bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
-          {String(currentSlide + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
-        </div>
       </div>
+
+      {/* Decorative element */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 md:h-24 bg-gradient-to-t from-background to-transparent z-5" />
     </section>
   )
 }

@@ -367,6 +367,138 @@ export const MATERIALS = [
 ]
 
 export const TRANSLATIONS = {
+  tr: {
+    // Navigation
+    shop: "Mağaza",
+    about: "Hakkımızda",
+    contact: "İletişim",
+    home: "Ana Sayfa",
+    back: "Geri",
+    viewAll: "Tümünü Gör",
+    share: "Paylaş",
+
+    // Categories
+    rings: "Yüzükler",
+    necklaces: "Kolyeler",
+    earrings: "Küpeler",
+    bracelets: "Bilezikler",
+
+    // Subcategories
+    engagementRings: "Nişan Yüzükleri",
+    weddingRings: "Evlilik Yüzükleri",
+    pendants: "Kolye Uçları",
+    chains: "Zincirler",
+    studs: "Saplı Küpeler",
+    hoops: "Halka Küpeler",
+    bangles: "Bilezikler",
+    tennisBracelets: "Tenis Bilezikleri",
+
+    // Products
+    diamondSolitaire: "Elmas Solitaire Yüzüğü",
+    pearlNecklace: "İnci Kolye",
+    goldEarrings: "Altın Küpeler",
+    silverBracelet: "Gümüş Bilezik",
+    emeraldRing: "Zümrüt Yüzük",
+    diamondEarrings: "Elmas Küpeler",
+    platinumRing: "Platin Yüzük",
+    goldChain: "Altın Zincir",
+    tennisBracelet: "Tenis Bilezik",
+    sapphireEarrings: "Safir Küpeler",
+
+    // Product descriptions
+    classicDiamondRing:
+      "Mükemmel kesim ve parlak ışıltısı ile klasik elmas yüzük. Herhangi bir özel anı için ideal seçim.",
+    elegantPearlNecklace: "Doğal inciler ve altın kapatılı zarif inci kolye. Modern ve klasik stillere mükemmel uyum.",
+    luxuryGoldEarrings: "İnce işçilik ve kusursuz bitişi ile lüks altın küpeler. Günlük ve resmi giyim için uygun.",
+    handcraftedSilverBracelet:
+      "Eşsiz tasarım ve yüksek kalite ile el yapımı gümüş bilezik. Modern stil severleri için.",
+    vintageEmeraldRing:
+      "Zengin rengi ve klasik tasarımı ile vintage tarzı zümrüt yüzük. Koleksiyoncular için eşsiz seçim.",
+    sparklingDiamondEarrings: "Mükemmel kesim ve harika parlaklığı ile parlayan elmas küpeler. Özel anlar için ideal.",
+    luxuryPlatinumRing: "En yüksek kalite ve dayanıklılığı ile lüks platin yüzük. Ebedi aşkın sembolü.",
+    classicGoldChain: "Geleneksel tasarım ve modern işçilik ile klasik altın zincir. Her kıyafete uyum sağlar.",
+    elegantTennisBracelet: "Kesintisiz elmaslar ve kusursuz ayarı ile zarif tenis bilezik. Lüks ve inceliğin sembolü.",
+    royalSapphireEarrings: "Zengin mavi rengi ve altın ayar ile kraliyet safir küpeleri. Aristokrat stil için uygun.",
+
+    // Materials
+    gold: "Altın",
+    silver: "Gümüş",
+    platinum: "Platin",
+    diamond: "Elmas",
+    pearl: "İnci",
+    emerald: "Zümrüt",
+    sapphire: "Safir",
+
+    // Common
+    price: "Fiyat",
+    inStock: "Stokta Var",
+    outOfStock: "Stokta Yok",
+    specifications: "Özellikler",
+    weight: "Ağırlık",
+    size: "Boyut",
+    purity: "Saflık",
+    stone: "Taş",
+    length: "Uzunluk",
+    material: "Malzeme",
+    category: "Kategori",
+    availability: "Uygunluk",
+
+    // Contact
+    contactTitle: "Bize Ulaşın",
+    contactDescription: "Kişisel hizmet için kuyumculuk uzmanlarımız ile iletişime geçin",
+    address: "Adres",
+    phone: "Telefon",
+    email: "E-posta",
+    ourLocation: "Konum",
+    fullName: "Tam Ad",
+    emailAddress: "E-posta Adresi",
+    phoneNumber: "Telefon Numarası",
+    message: "Mesaj",
+    sendMessage: "Mesaj Gönder",
+
+    // Recommended Collection
+    recommendedTitle: "Önerilen Koleksiyon",
+    recommendedSubtitle: "Dikkatle seçilmiş olağanüstü ürünlerimizin koleksiyonunu keşfedin",
+
+    // Hero Section
+    heroTitle: "FERGANAGOLD",
+    heroSubtitle: "Lüks Kuyumculuğun Sanatı",
+    heroDescription:
+      "En güzel andan başlayarak, hayatın en değerli anlarını kutlamak için tasarlanmış nefis kuyumculuk.",
+    exploreNow: "Keşfet",
+    callNow: "Hemen Ara",
+
+    // Services
+    servicesTitle: "Hizmetlerimiz",
+    customDesign: "Özel Tasarım",
+    customDesignDesc: "Kişisel isteklerinize göre tasarlanmış takı",
+    repair: "Onarım",
+    repairDesc: "Uzman onarım ve bakım hizmetleri",
+    valuation: "Değerleme",
+    valuationDesc: "Profesyonel kıymet takdir hizmetleri",
+    gifts: "Özel Hediyeler",
+    giftsDesc: "Özel anlar için tasarlanmış hediye takılar",
+
+    // Highlights
+    premiumQuality: "Premium Kalite",
+    premiumQualityDesc: "En yüksek kaliteli malzeme ve işçilik",
+    awardWinning: "Ödül Kazanmış",
+    awardWinningDesc: "Uluslararası tasarım ve kalite ödülleri",
+    expertConsultation: "Uzman Danışmanlık",
+    expertConsultationDesc: "Kişisel tasarım danışmanlığı ve rehberlik",
+    guarantees: "Garantiler",
+    guaranteesDesc: "Tüm takılarda yaşam boyu garantisi",
+
+    // Bot Chat
+    chatHello: "Merhaba! Nasıl yardımcı olabilirim?",
+    chatQuestion: "Sorular mı var?",
+    chatAsk: "Sor",
+
+    // Products Page
+    filterByCategory: "Kategoriye Göre Filtrele",
+    noProducts: "Ürün bulunamadı",
+    selectCategory: "Kategori seçin",
+  },
   uz: {
     // Navigation
     shop: "Do'kon",
@@ -464,6 +596,44 @@ export const TRANSLATIONS = {
     // Recommended Collection
     recommendedTitle: "Tavsiya etilgan kolleksiya",
     recommendedSubtitle: "Bizning ehtiyotkorlik bilan tanlangan ajoyib buyumlar kolleksiyasini kashf eting",
+
+    // Hero Section
+    heroTitle: "FERGANAGOLD",
+    heroSubtitle: "Lüks Kuyumculuğun Sanatı",
+    heroDescription: "Eng yaxshi materiallardan iborat, har qanday maxsus voqealar uchun ishonchli kuyumlar.",
+    exploreNow: "Ko'rib chiqish",
+    callNow: "Hozirroq bog'lanish",
+
+    // Services
+    servicesTitle: "Xizmatlar",
+    customDesign: "O'zingizning dizayningiz",
+    customDesignDesc: "Shaxsiy talablar bo'yicha ishonchli kuyumlar",
+    repair: "Onarish",
+    repairDesc: "Kuyumlar uchun qo'lda ishlangan onarish",
+    valuation: "Qiymat belgilash",
+    valuationDesc: "Kuyumlar uchun qo'lda ishlangan qiymat belgilash",
+    gifts: "Xonimlar",
+    giftsDesc: "Maxsus voqealar uchun ishonchli xonimlar",
+
+    // Highlights
+    premiumQuality: "Eng yuqori sifat",
+    premiumQualityDesc: "Eng yaxshi materiallardan va ishonchli ishlov bilan",
+    awardWinning: "O'limonlar",
+    awardWinningDesc: "Lüks va ishonchli kuyumlar uchun",
+    expertConsultation: "Xizmatkor xodimlar",
+    expertConsultationDesc: "Kuyumlar uchun qo'lda ishlangan xodimlar",
+    guarantees: "Garantiyalar",
+    guaranteesDesc: "Barcha kuyumlarda eng yuqori sifatni ta'minlaydi",
+
+    // Bot Chat
+    chatHello: "Salom! Sizga qanday yordam bera olishim mumkin?",
+    chatQuestion: "Savollaringiz bormi?",
+    chatAsk: "Savol bera yuboring",
+
+    // Products Page
+    filterByCategory: "Kategoriya bo'yicha filtrlash",
+    noProducts: "Hech qanday mahsulot topilmadi",
+    selectCategory: "Kategoriya tanlash",
   },
   ru: {
     // Navigation
@@ -563,6 +733,44 @@ export const TRANSLATIONS = {
     // Recommended Collection
     recommendedTitle: "Рекомендуемая коллекция",
     recommendedSubtitle: "Откройте для себя нашу тщательно отобранную коллекцию исключительных изделий",
+
+    // Hero Section
+    heroTitle: "FERGANAGOLD",
+    heroSubtitle: "Искусство роскошного ювелирного дела",
+    heroDescription: "От лучших материалов и идеального дизайна для любого особого случая.",
+    exploreNow: "Познакомиться",
+    callNow: "Свяжитесь сейчас",
+
+    // Services
+    servicesTitle: "Наши услуги",
+    customDesign: "Индивидуальный дизайн",
+    customDesignDesc: "Кольца, серьги, браслеты и ожерелья по вашему заказу",
+    repair: "Ремонт",
+    repairDesc: "Сервис ремонта и обслуживания ювелирных изделий",
+    valuation: "Оценка",
+    valuationDesc: "Профессиональная оценка ювелирных изделий",
+    gifts: "Подарки",
+    giftsDesc: "Подарочные кольца, серьги и браслеты для особого случая",
+
+    // Highlights
+    premiumQuality: "Премиум качество",
+    premiumQualityDesc: "Самые качественные материалы и работа",
+    awardWinning: "Победители наград",
+    awardWinningDesc: "Награды за дизайн и качество",
+    expertConsultation: "Консультация специалистов",
+    expertConsultationDesc: "Консультация по индивидуальному дизайну",
+    guarantees: "Гарантии",
+    guaranteesDesc: "Гарантия на все изделия",
+
+    // Bot Chat
+    chatHello: "Привет! Как я могу помочь?",
+    chatQuestion: "У вас есть вопросы?",
+    chatAsk: "Спросить",
+
+    // Products Page
+    filterByCategory: "Фильтр по категории",
+    noProducts: "Товары не найдены",
+    selectCategory: "Выберите категорию",
   },
   en: {
     // Navigation
@@ -659,101 +867,44 @@ export const TRANSLATIONS = {
     // Recommended Collection
     recommendedTitle: "Recommended Collection",
     recommendedSubtitle: "Discover our carefully curated selection of exceptional pieces",
-  },
-  tr: {
-    // Navigation
-    shop: "Mağaza",
-    about: "Hakkımızda",
-    contact: "İletişim",
-    home: "Ana Sayfa",
-    back: "Geri",
-    viewAll: "Tümünü Gör",
-    share: "Paylaş",
 
-    // Categories
-    rings: "Yüzükler",
-    necklaces: "Kolyeler",
-    earrings: "Küpeler",
-    bracelets: "Bilezikler",
+    // Hero Section
+    heroTitle: "FERGANAGOLD",
+    heroSubtitle: "The Art of Luxury Jewelry",
+    heroDescription: "From the finest materials to the most exquisite designs for any special occasion.",
+    exploreNow: "Explore",
+    callNow: "Call Now",
 
-    // Subcategories
-    engagementRings: "Nişan Yüzükleri",
-    weddingRings: "Alyans",
-    pendants: "Kolye Uçları",
-    chains: "Zincirler",
-    studs: "Tırnak Küpeler",
-    hoops: "Halka Küpeler",
-    bangles: "Bilezikler",
-    tennisBracelets: "Tenis Bilezikleri",
+    // Services
+    servicesTitle: "Our Services",
+    customDesign: "Custom Design",
+    customDesignDesc: "Jewelry tailored to your specifications",
+    repair: "Repair",
+    repairDesc: "Expert repair and maintenance services",
+    valuation: "Valuation",
+    valuationDesc: "Professional valuation services",
+    gifts: "Gifts",
+    giftsDesc: "Jewelry gifts for special occasions",
 
-    // Products
-    diamondSolitaire: "Pırlanta Solitaire Yüzük",
-    pearlNecklace: "İnci Kolye",
-    goldEarrings: "Altın Küpeler",
-    silverBracelet: "Gümüş Bilezik",
-    emeraldRing: "Zümrüt Yüzük",
-    diamondEarrings: "Pırlanta Küpeler",
-    platinumRing: "Platin Yüzük",
-    goldChain: "Altın Zincir",
-    tennisBracelet: "Tenis Bilezik",
-    sapphireEarrings: "Safir Küpeler",
+    // Highlights
+    premiumQuality: "Premium Quality",
+    premiumQualityDesc: "Highest quality materials and craftsmanship",
+    awardWinning: "Award Winning",
+    awardWinningDesc: "International design and quality awards",
+    expertConsultation: "Expert Consultation",
+    expertConsultationDesc: "Personalized design consultation and guidance",
+    guarantees: "Guarantees",
+    guaranteesDesc: "Lifetime warranty on all pieces",
 
-    // Product descriptions
-    classicDiamondRing:
-      "Mükemmel kesim ve parlak ışıltıya sahip klasik pırlanta yüzük. Her özel durum için ideal seçim.",
-    elegantPearlNecklace: "Doğal inciler ve altın klips ile zarif inci kolye. Modern ve klasik tarzlar için mükemmel.",
-    luxuryGoldEarrings: "İnce işçilik ve mükemmel bitişe sahip lüks altın küpeler. Günlük ve resmi kıyafetler için.",
-    handcraftedSilverBracelet:
-      "Benzersiz tasarım ve yüksek kaliteye sahip el yapımı gümüş bilezik. Modern tarz severler için.",
-    vintageEmeraldRing:
-      "Zengin renk ve klasik tasarıma sahip vintage tarzı zümrüt yüzük. Koleksiyoncular için benzersiz seçim.",
-    sparklingDiamondEarrings:
-      "Mükemmel kesim ve muhteşem parlaklığa sahip ışıltılı pırlanta küpeler. Özel durumlar için mükemmel.",
-    luxuryPlatinumRing: "En yüksek kalite ve dayanıklılığa sahip lüks platin yüzük. Sonsuz aşkın simgesi.",
-    classicGoldChain: "Geleneksel tasarım ve modern işçiliğe sahip klasik altın zincir. Her kıyafetle uyumlu.",
-    elegantTennisBracelet:
-      "Sürekli pırlantalar ve mükemmel ayara sahip zarif tenis bilezik. Lüks ve zarafetin simgesi.",
-    royalSapphireEarrings: "Zengin mavi renk ve altın ayara sahip kraliyet safir küpeleri. Aristokrat tarz için.",
+    // Bot Chat
+    chatHello: "Hello! How can I assist you?",
+    chatQuestion: "Do you have any questions?",
+    chatAsk: "Ask",
 
-    // Materials
-    gold: "Altın",
-    silver: "Gümüş",
-    platinum: "Platin",
-    diamond: "Pırlanta",
-    pearl: "İnci",
-    emerald: "Zümrüt",
-    sapphire: "Safir",
-
-    // Common
-    price: "Fiyat",
-    inStock: "Stokta",
-    outOfStock: "Stokta Yok",
-    specifications: "Özellikler",
-    weight: "Ağırlık",
-    size: "Boyut",
-    purity: "Saflık",
-    stone: "Taş",
-    length: "Uzunluk",
-    material: "Malzeme",
-    category: "Kategori",
-    availability: "Mevcudluk",
-
-    // Contact
-    contactTitle: "Bizimle İletişime Geçin",
-    contactDescription: "Kişiselleştirilmiş hizmet için mücevher uzmanlarımızla iletişime geçin",
-    address: "Adres",
-    phone: "Telefon",
-    email: "E-posta",
-    ourLocation: "Konumumuz",
-    fullName: "Ad Soyad",
-    emailAddress: "E-posta Adresi",
-    phoneNumber: "Telefon Numarası",
-    message: "Mesaj",
-    sendMessage: "Mesaj Gönder",
-
-    // Recommended Collection
-    recommendedTitle: "Önerilen Koleksiyon",
-    recommendedSubtitle: "Özenle seçilmiş olağanüstü parçalar koleksiyonumuzu keşfedin",
+    // Products Page
+    filterByCategory: "Filter by Category",
+    noProducts: "No products found",
+    selectCategory: "Select a category",
   },
 }
 

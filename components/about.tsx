@@ -25,7 +25,7 @@ export function About() {
   }
 
   return (
-    <section id="about" className="py-12 md:py-16 lg:py-24 bg-gray-50">
+    <section id="about" className="py-12 md:py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Images Carousel */}
@@ -41,13 +41,13 @@ export function About() {
             {/* Navigation Arrows */}
             <button
               onClick={prevImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-1.5 md:p-2 transition-all duration-300"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-700/80 dark:hover:bg-slate-700 text-black dark:text-white rounded-full p-1.5 md:p-2 transition-all duration-300"
             >
               <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-1.5 md:p-2 transition-all duration-300"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-700/80 dark:hover:bg-slate-700 text-black dark:text-white rounded-full p-1.5 md:p-2 transition-all duration-300"
             >
               <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
             </button>
@@ -58,7 +58,9 @@ export function About() {
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
                   className={`w-12 h-8 md:w-16 md:h-12 rounded overflow-hidden border-2 transition-all duration-300 ${
-                    index === currentImageIndex ? "border-black" : "border-gray-300"
+                    index === currentImageIndex
+                      ? "border-black dark:border-white"
+                      : "border-gray-300 dark:border-slate-600"
                   }`}
                 >
                   <img
@@ -73,38 +75,38 @@ export function About() {
 
           {/* Content */}
           <div className="order-1 lg:order-2">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.1em] md:tracking-[0.2em] mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.1em] md:tracking-[0.2em] mb-4 md:mb-6 text-foreground">
               {t("aboutTitle")}
             </h2>
-            <div className="w-16 md:w-20 h-px bg-black mb-6 md:mb-8" />
+            <div className="w-16 md:w-20 h-px bg-foreground dark:bg-slate-300 mb-6 md:mb-8" />
 
-            <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed">
+            <div className="space-y-4 md:space-y-6 text-foreground leading-relaxed">
               <p className="text-base md:text-lg">{t("aboutText1")}</p>
               <p className="text-sm md:text-base">{t("aboutText2")}</p>
             </div>
 
-            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-white rounded-lg shadow-sm">
-              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">{t("contactInfo")}</h3>
+            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card dark:bg-slate-800 rounded-lg shadow-sm border border-border">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-foreground">{t("contactInfo")}</h3>
               <div className="grid grid-cols-1 gap-3 md:gap-4 text-sm">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="h-4 w-4 text-gray-600 flex-shrink-0 mt-0.5" />
+                  <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-medium">{t("address")}</p>
-                    <p className="text-gray-600 text-xs md:text-sm">Fergana, Mustaqillik 123</p>
+                    <p className="font-medium text-foreground">{t("address")}</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">Fergana, Mustaqillik 123</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Phone className="h-4 w-4 text-gray-600 flex-shrink-0 mt-0.5" />
+                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-medium">{t("phone")}</p>
-                    <p className="text-gray-600 text-xs md:text-sm">+998 73 244 55 66</p>
+                    <p className="font-medium text-foreground">{t("phone")}</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">+998 73 244 55 66</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Mail className="h-4 w-4 text-gray-600 flex-shrink-0 mt-0.5" />
+                  <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-medium">{t("email")}</p>
-                    <p className="text-gray-600 text-xs md:text-sm">info@ferganagold.uz</p>
+                    <p className="font-medium text-foreground">{t("email")}</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">info@ferganagold.uz</p>
                   </div>
                 </div>
               </div>
@@ -112,20 +114,26 @@ export function About() {
 
             <div className="grid grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-12">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2">30+</div>
-                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider">{t("experience")}</div>
+                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">30+</div>
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
+                  {t("experience")}
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2">10K+</div>
-                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider">{t("customers")}</div>
+                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">10K+</div>
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
+                  {t("customers")}
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2">100%</div>
-                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider">{t("authentic")}</div>
+                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">100%</div>
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
+                  {t("authentic")}
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2">24/7</div>
-                <div className="text-xs md:text-sm text-gray-600 uppercase tracking-wider">{t("support")}</div>
+                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">24/7</div>
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">{t("support")}</div>
               </div>
             </div>
           </div>

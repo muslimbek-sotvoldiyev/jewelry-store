@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react"
 import { TRANSLATIONS } from "@/lib/data"
 
-type Language = "uz" | "ru" | "en" | "tr"
+type Language = "tr" | "uz" | "ru" | "en"
 
 interface LanguageContextType {
   language: Language
@@ -15,23 +15,23 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("uz")
+  const [language, setLanguage] = useState<Language>("tr")
 
   const t = (key: string): string => {
     return TRANSLATIONS[language]?.[key as keyof (typeof TRANSLATIONS)[Language]] || key
   }
 
   const formatPrice = (price: number): string => {
-    if (language === "uz") {
+    if (language === "tr") {
+      return `${price.toLocaleString("tr-TR")} ₺`
+    } else if (language === "uz") {
       return `${price.toLocaleString()} so'm`
     } else if (language === "ru") {
       return `${price.toLocaleString()} сум`
     } else if (language === "en") {
       return `$${(price / 12500).toFixed(0)}`
-    } else if (language === "tr") {
-      return `${price.toLocaleString()} som`
     }
-    return `${price.toLocaleString()} so'm`
+    return `${price.toLocaleString()} ₺`
   }
 
   return (
