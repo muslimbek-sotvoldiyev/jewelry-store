@@ -461,7 +461,7 @@ export const TRANSLATIONS = {
     recommendedSubtitle: "Dikkatle seçilmiş olağanüstü ürünlerimizin koleksiyonunu keşfedin",
 
     // Hero Section
-    heroTitle: "FERGANAGOLD",
+    heroTitle: "FERGAGOLD",
     heroSubtitle: "Lüks Kuyumculuğun Sanatı",
     heroDescription:
       "En güzel andan başlayarak, hayatın en değerli anlarını kutlamak için tasarlanmış nefis kuyumculuk.",
@@ -598,7 +598,7 @@ export const TRANSLATIONS = {
     recommendedSubtitle: "Bizning ehtiyotkorlik bilan tanlangan ajoyib buyumlar kolleksiyasini kashf eting",
 
     // Hero Section
-    heroTitle: "FERGANAGOLD",
+    heroTitle: "FERGAGOLD",
     heroSubtitle: "Lüks Kuyumculuğun Sanatı",
     heroDescription: "Eng yaxshi materiallardan iborat, har qanday maxsus voqealar uchun ishonchli kuyumlar.",
     exploreNow: "Ko'rib chiqish",
@@ -735,7 +735,7 @@ export const TRANSLATIONS = {
     recommendedSubtitle: "Откройте для себя нашу тщательно отобранную коллекцию исключительных изделий",
 
     // Hero Section
-    heroTitle: "FERGANAGOLD",
+    heroTitle: "FERGAGOLD",
     heroSubtitle: "Искусство роскошного ювелирного дела",
     heroDescription: "От лучших материалов и идеального дизайна для любого особого случая.",
     exploreNow: "Познакомиться",
@@ -869,7 +869,7 @@ export const TRANSLATIONS = {
     recommendedSubtitle: "Discover our carefully curated selection of exceptional pieces",
 
     // Hero Section
-    heroTitle: "FERGANAGOLD",
+    heroTitle: "FERGAGOLD",
     heroSubtitle: "The Art of Luxury Jewelry",
     heroDescription: "From the finest materials to the most exquisite designs for any special occasion.",
     exploreNow: "Explore",

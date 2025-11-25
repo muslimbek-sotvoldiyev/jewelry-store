@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "FERGANAGOLD - Luxury Jewelry Store",
+  title: "FERGAGOLD - Luxury Jewelry Store",
   description: "Discover exquisite handcrafted jewelry with timeless elegance and exceptional quality.",
   generator: "v0.dev",
 }

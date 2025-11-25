@@ -25,7 +25,7 @@ export function Loader({ fullScreen = false, label = "Loading..." }: LoaderProps
   const Content = () => (
     <div className="flex flex-col items-center gap-4">
       <div className="text-center">
-        <h1 className="text-2xl luxury-heading tracking-[0.2em] font-light">FERGANAGOLD</h1>
+        <h1 className="text-2xl luxury-heading tracking-[0.2em] font-light">FERGAGOLD</h1>
         <div className="w-20 h-px bg-black mx-auto mt-1" />
       </div>
       <Dots />

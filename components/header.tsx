@@ -60,7 +60,7 @@ function Header() {
                 isScrolled ? "text-xs sm:text-sm md:text-base" : "text-sm sm:text-base md:text-lg"
               }`}
             >
-              FERGANAGOLD
+              FERGAGOLD
             </span>
           </Link>
 

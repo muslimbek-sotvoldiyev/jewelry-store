@@ -84,7 +84,7 @@ export function Contact() {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Email</p>
-                <p className="text-xs sm:text-sm text-foreground font-medium">info@ferganagold.uz</p>
+                <p className="text-xs sm:text-sm text-foreground font-medium">info@fergagold.uz</p>
               </div>
             </div>
           </div>

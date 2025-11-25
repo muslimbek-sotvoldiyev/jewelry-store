@@ -33,7 +33,7 @@ export function About() {
             <div className="aspect-[4/3] overflow-hidden rounded-lg">
               <img
                 src={aboutImages[currentImageIndex] || "/placeholder.svg"}
-                alt={`About FERGANAGOLD ${currentImageIndex + 1}`}
+                alt={`About FERGAGOLD ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -106,7 +106,7 @@ export function About() {
                   <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">{t("email")}</p>
-                    <p className="text-muted-foreground text-xs md:text-sm">info@ferganagold.uz</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">info@fergagold.uz</p>
                   </div>
                 </div>
               </div>

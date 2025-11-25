@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-light tracking-[0.3em] mb-6">FERGANAGOLD</h3>
+            <h3 className="text-2xl font-light tracking-[0.3em] mb-6">FERGAGOLD</h3>
             <p className="text-foreground/70 dark:text-slate-400 leading-relaxed mb-6">
               Timeless elegance and handcrafted excellence in luxury jewelry
             </p>
@@ -130,13 +130,13 @@ export default function Footer() {
               <p>Fergana, Uzbekistan</p>
               <p>Mustaqillik Street 123</p>
               <p>+998 73 244 55 66</p>
-              <p>info@ferganagold.uz</p>
+              <p>info@fergagold.uz</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-foreground/10 dark:border-slate-800 mt-12 pt-8 text-center text-foreground/70 dark:text-slate-400">
-          <p>&copy; 2025 FERGANAGOLD. All rights reserved.</p>
+          <p>&copy; 2025 FERGAGOLD. All rights reserved.</p>
         </div>
       </div>
     </footer>

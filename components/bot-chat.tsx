@@ -78,7 +78,7 @@ export function BotChat() {
                 <MessageCircle className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm">{t("support") || "FERGANAGOLD Support"}</h3>
+                <h3 className="font-semibold text-sm">{t("support") || "FERGAGOLD Support"}</h3>
                 <p className="text-xs text-primary-foreground/70">Online</p>
               </div>
             </div>
