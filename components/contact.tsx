@@ -51,7 +51,7 @@ export function Contact() {
             {/* Map */}
             <div className="rounded-xl overflow-hidden border border-border shadow-lg h-80">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.4!2d71.7864!3d40.3842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb8d4f4f4f4f4f%3A0x4f4f4f4f4f4f4f4f!2sFergana%2C%20Uzbekistan!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3043.4104783568728!2d71.751684!3d40.3766548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb9d6aa90275b5%3A0x3a362104073155b6!2sFerga%20Gold!5e1!3m2!1suz!2s!4v1764048397976!5m2!1suz!2s" 
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

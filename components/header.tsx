@@ -50,8 +50,8 @@ function Header() {
               }`}
             >
               <img
-                src="/logo.png"
-                alt="FERGANAGOLD Logo"
+                src="/logo.jpg"
+                alt="FERGAGOLD Logo"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
             </div>
