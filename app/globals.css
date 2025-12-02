@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Updated color scheme to elegant cream and gold palette */
-    --background: 0 0% 98%;
-    --foreground: 20 15% 20%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 15% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 15% 20%;
-    --primary: 35 90% 55%;
+    /* Updated to dark elegant palette - removed green */
+    --background: 30 10% 96%;
+    --foreground: 20 15% 15%;
+    --card: 30 15% 92%;
+    --card-foreground: 20 15% 15%;
+    --popover: 30 10% 96%;
+    --popover-foreground: 20 15% 15%;
+    --primary: 35 90% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 20 25% 85%;
-    --secondary-foreground: 20 15% 20%;
-    --muted: 20 10% 85%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 35 100% 95%;
-    --accent-foreground: 20 15% 20%;
+    --secondary: 25 20% 88%;
+    --secondary-foreground: 20 15% 15%;
+    --muted: 25 15% 85%;
+    --muted-foreground: 20 10% 40%;
+    --accent: 35 60% 90%;
+    --accent-foreground: 20 15% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 20 20% 90%;
-    --input: 20 20% 92%;
-    --ring: 35 90% 55%;
+    --border: 25 15% 85%;
+    --input: 25 15% 90%;
+    --ring: 35 90% 50%;
     --radius: 0.5rem;
     --chart-1: 35 90% 55%;
     --chart-2: 20 70% 50%;
@@ -34,27 +34,27 @@
     --font-sans: var(--font-inter);
   }
 
-  /* Updated dark mode color scheme with proper contrast - darker background for better readability */
+  /* Fixed dark mode - card color now matches background better */
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
-    --card: 20 18% 15%;
-    --card-foreground: 0 0% 98%;
-    --popover: 20 18% 15%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 35 95% 65%;
-    --primary-foreground: 0 0% 5%;
-    --secondary: 20 22% 35%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 20 15% 40%;
-    --muted-foreground: 20 10% 75%;
-    --accent: 35 90% 25%;
-    --accent-foreground: 0 0% 98%;
+    --background: 20 10% 8%;
+    --foreground: 30 20% 95%;
+    --card: 20 10% 14%;
+    --card-foreground: 30 20% 95%;
+    --popover: 20 10% 14%;
+    --popover-foreground: 30 20% 95%;
+    --primary: 35 95% 55%;
+    --primary-foreground: 20 10% 8%;
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 30 20% 95%;
+    --muted: 20 10% 22%;
+    --muted-foreground: 30 15% 65%;
+    --accent: 35 50% 18%;
+    --accent-foreground: 30 20% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 20 18% 25%;
-    --input: 20 18% 18%;
-    --ring: 35 95% 65%;
+    --border: 20 10% 22%;
+    --input: 20 10% 18%;
+    --ring: 35 95% 55%;
   }
 }
 
@@ -329,4 +329,125 @@ html {
   .no-print {
     display: none !important;
   }
+}
+
+/* New animations for jewelry website */
+
+/* Floating animation for particles */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Sparkle animation for diamond effects */
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+/* Slow pulse for logo/icons */
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+/* Fade in up animation */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Shimmer effect for buttons */
+@keyframes shimmer-gold {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.3) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer-gold 2s ease-in-out infinite;
+}
+
+/* Radial gradient utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Gold glow effect */
+.glow-gold {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.2), 0 0 60px hsl(var(--primary) / 0.1);
+}
+
+/* Text shimmer effect */
+.text-shimmer {
+  background: linear-gradient(90deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 50%, hsl(var(--foreground)) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-gold 3s ease-in-out infinite;
 }

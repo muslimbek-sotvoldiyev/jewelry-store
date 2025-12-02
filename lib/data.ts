@@ -377,6 +377,14 @@ export const TRANSLATIONS = {
     viewAll: "Tümünü Gör",
     share: "Paylaş",
 
+    // About Section
+    aboutTitle: "Hakkımızda",
+    aboutText1:
+      "FERGAGOLD, 30 yılı aşkın tecrübesiyle Fergana'nın en güvenilir kuyumcusu olarak hizmet vermektedir. En kaliteli altın, gümüş, platin ve değerli taşlardan el işi mücevherler üretiyoruz.",
+    aboutText2:
+      "Her bir ürünümüz, ustalarımızın titiz işçiliği ve modern teknolojinin birleşimiyle hayat buluyor. Müşteri memnuniyeti ve kalite, bizim için her zaman önceliklidir.",
+    contactInfo: "İletişim Bilgileri",
+
     // Categories
     rings: "Yüzükler",
     necklaces: "Kolyeler",
@@ -498,6 +506,16 @@ export const TRANSLATIONS = {
     filterByCategory: "Kategoriye Göre Filtrele",
     noProducts: "Ürün bulunamadı",
     selectCategory: "Kategori seçin",
+
+    experience: "Yıllık Tecrübe",
+    customers: "Mutlu Müşteri",
+    authentic: "Orijinal",
+    support: "Destek",
+    footerDescription: "Ebedi zarafet ve el işçiliği kaliteli mücevherler",
+    services: "Hizmetler",
+    repairRestoration: "Onarım ve Restorasyon",
+    bespokeGifts: "Özel Hediyeler",
+    allRightsReserved: "Tüm hakları saklıdır.",
   },
   uz: {
     // Navigation
@@ -508,6 +526,14 @@ export const TRANSLATIONS = {
     back: "Orqaga",
     viewAll: "Barchasini ko'rish",
     share: "Ulashish",
+
+    // About Section
+    aboutTitle: "Biz haqimizda",
+    aboutText1:
+      "FERGAGOLD 30 yildan ortiq tajribaga ega Farg'onaning eng ishonchli zargarlik do'konidir. Biz eng sifatli oltin, kumush, platina va qimmatbaho toshlardan qo'lda ishlangan zargarlik buyumlarini ishlab chiqaramiz.",
+    aboutText2:
+      "Har bir mahsulotimiz ustalarimizning sinchkov mehnatitning va zamonaviy texnologiyalarning uyg'unligi natijasida yaratiladi. Mijozlar mamnuniyati va sifat biz uchun doimo ustuvordir.",
+    contactInfo: "Aloqa ma'lumotlari",
 
     // Categories
     rings: "Uzuklar",
@@ -634,6 +660,16 @@ export const TRANSLATIONS = {
     filterByCategory: "Kategoriya bo'yicha filtrlash",
     noProducts: "Hech qanday mahsulot topilmadi",
     selectCategory: "Kategoriya tanlash",
+
+    experience: "Yillik tajriba",
+    customers: "Mamnun mijozlar",
+    authentic: "Original",
+    support: "Qo'llab-quvvatlash",
+    footerDescription: "Abadiy nafosatlik va qo'lda ishlangan sifatli zargarlik buyumlari",
+    services: "Xizmatlar",
+    repairRestoration: "Ta'mirlash va tiklash",
+    bespokeGifts: "Maxsus sovg'alar",
+    allRightsReserved: "Barcha huquqlar himoyalangan.",
   },
   ru: {
     // Navigation
@@ -644,6 +680,14 @@ export const TRANSLATIONS = {
     back: "Назад",
     viewAll: "Посмотреть все",
     share: "Поделиться",
+
+    // About Section
+    aboutTitle: "О нас",
+    aboutText1:
+      "FERGAGOLD — самый надежный ювелирный магазин Ферганы с более чем 30-летним опытом работы. Мы производим ювелирные изделия ручной работы из высококачественного золота, серебра, платины и драгоценных камней.",
+    aboutText2:
+      "Каждый наш продукт создается благодаря сочетанию кропотливого труда наших мастеров и современных технологий. Удовлетворенность клиентов и качество всегда являются для нас приоритетом.",
+    contactInfo: "Контактная информация",
 
     // Categories
     rings: "Кольца",
@@ -771,6 +815,16 @@ export const TRANSLATIONS = {
     filterByCategory: "Фильтр по категории",
     noProducts: "Товары не найдены",
     selectCategory: "Выберите категорию",
+
+    experience: "Лет опыта",
+    customers: "Довольных клиентов",
+    authentic: "Оригинал",
+    support: "Поддержка",
+    footerDescription: "Вечная элегантность и качественные ювелирные изделия ручной работы",
+    services: "Услуги",
+    repairRestoration: "Ремонт и реставрация",
+    bespokeGifts: "Эксклюзивные подарки",
+    allRightsReserved: "Все права защищены.",
   },
   en: {
     // Navigation
@@ -781,6 +835,14 @@ export const TRANSLATIONS = {
     back: "Back",
     viewAll: "View All",
     share: "Share",
+
+    // About Section
+    aboutTitle: "About Us",
+    aboutText1:
+      "FERGAGOLD is Fergana's most trusted jewelry store with over 30 years of experience. We produce handcrafted jewelry from the highest quality gold, silver, platinum and precious stones.",
+    aboutText2:
+      "Each of our products is created through the combination of our craftsmen's meticulous work and modern technology. Customer satisfaction and quality are always our priority.",
+    contactInfo: "Contact Information",
 
     // Categories
     rings: "Rings",
@@ -905,6 +967,16 @@ export const TRANSLATIONS = {
     filterByCategory: "Filter by Category",
     noProducts: "No products found",
     selectCategory: "Select a category",
+
+    experience: "Years Experience",
+    customers: "Happy Customers",
+    authentic: "Authentic",
+    support: "Support",
+    footerDescription: "Timeless elegance and handcrafted quality jewelry",
+    services: "Services",
+    repairRestoration: "Repair & Restoration",
+    bespokeGifts: "Bespoke Gifts",
+    allRightsReserved: "All rights reserved.",
   },
 }
 
