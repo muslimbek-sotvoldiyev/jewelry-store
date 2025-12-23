@@ -14,10 +14,10 @@ const jewelryImages = [
 ]
 
 const floatingImages = [
-  { src: "/gold-bracelet-hand-elegant.jpg", alt: "Gold bracelet" },
-  { src: "/gold-diamond-rings-luxury.jpg", alt: "Gold rings" },
-  { src: "/elegant-necklace-woman-portrait.jpg", alt: "Necklace" },
-  { src: "/butterfly-gold-ring-elegant.jpg", alt: "Butterfly rings" },
+  { src: "/luxury-gold-necklace-jewelry.jpg", alt: "Gold bracelet" },
+  { src: "/image.png", alt: "Gold rings" },
+  { src: "/image2.png", alt: "Butterfly rings" },
+  { src: "/gold-pendant-necklace-jewelry.jpg", alt: "Necklace" },
 ]
 
 export function Hero() {

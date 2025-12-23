@@ -30,7 +30,7 @@ function ProductsPageContent() {
         {/* Hero Section */}
         <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-accent/10 to-background">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center">
+            <div className="pt-10  text-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-widest text-foreground mb-2 sm:mb-4">
                 {t("mahsulotlar") || "Products"}
               </h1>

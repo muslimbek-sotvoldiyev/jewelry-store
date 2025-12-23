@@ -101,14 +101,14 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground">{t("phone") || "Telefon"}</p>
-                  <p>+998 73 244 55 66</p>
+                  <p>+998 73 226 13 33</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="font-medium text-foreground">{t("email") || "E-pochta"}</p>
-                  <p>info@fergagold.uz</p>
+                  <p>info@fergagold.com</p>
                 </div>
               </div>
             </div>

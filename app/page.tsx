@@ -24,7 +24,7 @@ export default function HomePage() {
         <Services />
         <About />
         <Contact />
-        <BotChat />
+        {/* <BotChat /> */}
         <Footer />
       </div>
     </LanguageProvider>

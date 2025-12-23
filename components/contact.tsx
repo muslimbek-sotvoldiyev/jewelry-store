@@ -76,7 +76,7 @@ export function Contact() {
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Phone</p>
-                <p className="text-xs sm:text-sm text-foreground font-medium">+998 73 244 55 66</p>
+                <p className="text-xs sm:text-sm text-foreground font-medium">+998 73 226 13 33</p>
               </div>
 
               <div className="bg-card border border-border rounded-lg p-5 sm:p-6 text-center hover:border-primary/50 transition-colors">
@@ -84,7 +84,7 @@ export function Contact() {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Email</p>
-                <p className="text-xs sm:text-sm text-foreground font-medium">info@fergagold.uz</p>
+                <p className="text-xs sm:text-sm text-foreground font-medium">info@fergagold.com</p>
               </div>
             </div>
           </div>

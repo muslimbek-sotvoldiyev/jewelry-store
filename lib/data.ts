@@ -1,38 +1,38 @@
 export interface Product {
-  id: string
-  nameKey: string
-  descriptionKey: string
-  priceUZS: number
-  priceUSD: number
-  image: string
-  images: string[]
-  category: string
-  subcategory: string
-  material: string
-  inStock: boolean
-  featured: boolean
-  recommended: boolean
+  id: string;
+  nameKey: string;
+  descriptionKey: string;
+  priceUZS: number;
+  priceUSD: number;
+  image: string;
+  images: string[];
+  category: string;
+  subcategory: string;
+  material: string;
+  inStock: boolean;
+  featured: boolean;
+  recommended: boolean;
   specifications: {
-    weight?: string
-    size?: string
-    purity?: string
-    stone?: string
-    length?: string
-  }
+    weight?: string;
+    size?: string;
+    purity?: string;
+    stone?: string;
+    length?: string;
+  };
 }
 
 export interface Category {
-  id: string
-  nameKey: string
-  description: string
-  image: string
-  subcategories?: Subcategory[]
+  id: string;
+  nameKey: string;
+  description: string;
+  image: string;
+  subcategories?: Subcategory[];
 }
 
 export interface Subcategory {
-  id: string
-  nameKey: string
-  products: Product[]
+  id: string;
+  nameKey: string;
+  products: Product[];
 }
 
 export const CATEGORIES: Category[] = [
@@ -40,7 +40,8 @@ export const CATEGORIES: Category[] = [
     id: "rings",
     nameKey: "rings",
     description: "Elegant rings for every occasion",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
     subcategories: [
       {
         id: "engagement",
@@ -58,7 +59,8 @@ export const CATEGORIES: Category[] = [
     id: "necklaces",
     nameKey: "necklaces",
     description: "Beautiful necklaces and pendants",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
     subcategories: [
       {
         id: "pendants",
@@ -76,7 +78,8 @@ export const CATEGORIES: Category[] = [
     id: "earrings",
     nameKey: "earrings",
     description: "Stunning earrings for any style",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
     subcategories: [
       {
         id: "studs",
@@ -94,7 +97,8 @@ export const CATEGORIES: Category[] = [
     id: "bracelets",
     nameKey: "bracelets",
     description: "Exquisite bracelets and bangles",
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
     subcategories: [
       {
         id: "bangles",
@@ -108,7 +112,7 @@ export const CATEGORIES: Category[] = [
       },
     ],
   },
-]
+];
 
 export const PRODUCTS: Product[] = [
   {
@@ -117,7 +121,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "classicDiamondRing",
     priceUZS: 15000000,
     priceUSD: 1200,
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
@@ -142,7 +147,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "elegantPearlNecklace",
     priceUZS: 8500000,
     priceUSD: 680,
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
@@ -167,7 +173,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "luxuryGoldEarrings",
     priceUZS: 6200000,
     priceUSD: 495,
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
@@ -191,7 +198,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "handcraftedSilverBracelet",
     priceUZS: 4800000,
     priceUSD: 385,
-    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80",
@@ -216,7 +224,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "vintageEmeraldRing",
     priceUZS: 22000000,
     priceUSD: 1760,
-    image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
@@ -240,7 +249,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "sparklingDiamondEarrings",
     priceUZS: 18500000,
     priceUSD: 1480,
-    image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
@@ -264,7 +274,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "luxuryPlatinumRing",
     priceUZS: 28000000,
     priceUSD: 2240,
-    image: "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
@@ -288,7 +299,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "classicGoldChain",
     priceUZS: 12000000,
     priceUSD: 960,
-    image: "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
@@ -312,7 +324,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "elegantTennisBracelet",
     priceUZS: 35000000,
     priceUSD: 2800,
-    image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
@@ -336,7 +349,8 @@ export const PRODUCTS: Product[] = [
     descriptionKey: "royalSapphireEarrings",
     priceUZS: 24000000,
     priceUSD: 1920,
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
+    image:
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
     images: [
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
@@ -354,7 +368,7 @@ export const PRODUCTS: Product[] = [
       stone: "2ct Sapphires",
     },
   },
-]
+];
 
 export const MATERIALS = [
   { id: "gold", nameKey: "gold" },
@@ -364,7 +378,7 @@ export const MATERIALS = [
   { id: "pearl", nameKey: "pearl" },
   { id: "emerald", nameKey: "emerald" },
   { id: "sapphire", nameKey: "sapphire" },
-]
+];
 
 export const TRANSLATIONS = {
   tr: {
@@ -380,9 +394,9 @@ export const TRANSLATIONS = {
     // About Section
     aboutTitle: "Hakkımızda",
     aboutText1:
-      "FERGAGOLD, 30 yılı aşkın tecrübesiyle Fergana'nın en güvenilir kuyumcusu olarak hizmet vermektedir. En kaliteli altın, gümüş, platin ve değerli taşlardan el işi mücevherler üretiyoruz.",
+      "FERGAGOLD, Türk ve Azerbaycan ortak yatırımıyla Özbekistan’ın Fergana viloyatında kurulmuş modern bir altın işleme ve üretim tesisidir. 30 yılı aşkın tecrübeye sahip uzman kadromuzla, Fergana bölgesinin ve Özbekistan altın sektörünün önde gelen üretim merkezlerinden biri olarak faaliyet gösteriyoruz.",
     aboutText2:
-      "Her bir ürünümüz, ustalarımızın titiz işçiliği ve modern teknolojinin birleşimiyle hayat buluyor. Müşteri memnuniyeti ve kalite, bizim için her zaman önceliklidir.",
+      "Dört dönüm arazi üzerine kurulu, 1.500 m² kapalı alana sahip tesisimizde son teknoloji makine parkuru ve uluslararası standartlara uygun kontrollü üretim süreçleriyle yüksek kalitede altın işleme gerçekleştiriyoruz. Her bir üretim aşamasında kalite, verimlilik, güvenilirlik ve sürdürülebilirlik en öncelikli değerlerimizdir. 80 kişilik uzman ekibimizle hem yerel hem de uluslararası pazarlara yönelik güvenilir üretim ve uzun vadeli iş ortaklıkları hedefliyoruz.",
     contactInfo: "İletişim Bilgileri",
 
     // Categories
@@ -416,17 +430,24 @@ export const TRANSLATIONS = {
     // Product descriptions
     classicDiamondRing:
       "Mükemmel kesim ve parlak ışıltısı ile klasik elmas yüzük. Herhangi bir özel anı için ideal seçim.",
-    elegantPearlNecklace: "Doğal inciler ve altın kapatılı zarif inci kolye. Modern ve klasik stillere mükemmel uyum.",
-    luxuryGoldEarrings: "İnce işçilik ve kusursuz bitişi ile lüks altın küpeler. Günlük ve resmi giyim için uygun.",
+    elegantPearlNecklace:
+      "Doğal inciler ve altın kapatılı zarif inci kolye. Modern ve klasik stillere mükemmel uyum.",
+    luxuryGoldEarrings:
+      "İnce işçilik ve kusursuz bitişi ile lüks altın küpeler. Günlük ve resmi giyim için uygun.",
     handcraftedSilverBracelet:
       "Eşsiz tasarım ve yüksek kalite ile el yapımı gümüş bilezik. Modern stil severleri için.",
     vintageEmeraldRing:
       "Zengin rengi ve klasik tasarımı ile vintage tarzı zümrüt yüzük. Koleksiyoncular için eşsiz seçim.",
-    sparklingDiamondEarrings: "Mükemmel kesim ve harika parlaklığı ile parlayan elmas küpeler. Özel anlar için ideal.",
-    luxuryPlatinumRing: "En yüksek kalite ve dayanıklılığı ile lüks platin yüzük. Ebedi aşkın sembolü.",
-    classicGoldChain: "Geleneksel tasarım ve modern işçilik ile klasik altın zincir. Her kıyafete uyum sağlar.",
-    elegantTennisBracelet: "Kesintisiz elmaslar ve kusursuz ayarı ile zarif tenis bilezik. Lüks ve inceliğin sembolü.",
-    royalSapphireEarrings: "Zengin mavi rengi ve altın ayar ile kraliyet safir küpeleri. Aristokrat stil için uygun.",
+    sparklingDiamondEarrings:
+      "Mükemmel kesim ve harika parlaklığı ile parlayan elmas küpeler. Özel anlar için ideal.",
+    luxuryPlatinumRing:
+      "En yüksek kalite ve dayanıklılığı ile lüks platin yüzük. Ebedi aşkın sembolü.",
+    classicGoldChain:
+      "Geleneksel tasarım ve modern işçilik ile klasik altın zincir. Her kıyafete uyum sağlar.",
+    elegantTennisBracelet:
+      "Kesintisiz elmaslar ve kusursuz ayarı ile zarif tenis bilezik. Lüks ve inceliğin sembolü.",
+    royalSapphireEarrings:
+      "Zengin mavi rengi ve altın ayar ile kraliyet safir küpeleri. Aristokrat stil için uygun.",
 
     // Materials
     gold: "Altın",
@@ -453,7 +474,8 @@ export const TRANSLATIONS = {
 
     // Contact
     contactTitle: "Bize Ulaşın",
-    contactDescription: "Kişisel hizmet için kuyumculuk uzmanlarımız ile iletişime geçin",
+    contactDescription:
+      "Kişisel hizmet için kuyumculuk uzmanlarımız ile iletişime geçin",
     address: "Adres",
     phone: "Telefon",
     email: "E-posta",
@@ -466,7 +488,8 @@ export const TRANSLATIONS = {
 
     // Recommended Collection
     recommendedTitle: "Önerilen Koleksiyon",
-    recommendedSubtitle: "Dikkatle seçilmiş olağanüstü ürünlerimizin koleksiyonunu keşfedin",
+    recommendedSubtitle:
+      "Dikkatle seçilmiş olağanüstü ürünlerimizin koleksiyonunu keşfedin",
 
     // Hero Section
     heroTitle: "FERGAGOLD",
@@ -528,11 +551,12 @@ export const TRANSLATIONS = {
     share: "Ulashish",
 
     // About Section
+
     aboutTitle: "Biz haqimizda",
     aboutText1:
-      "FERGAGOLD 30 yildan ortiq tajribaga ega Farg'onaning eng ishonchli zargarlik do'konidir. Biz eng sifatli oltin, kumush, platina va qimmatbaho toshlardan qo'lda ishlangan zargarlik buyumlarini ishlab chiqaramiz.",
+      "FERGAGOLD — Turk va Ozarbayjon qo‘shma investitsiyasi bilan O‘zbekistonning Farg‘ona viloyatida tashkil etilgan zamonaviy oltin qayta ishlash va ishlab chiqarish korxonasi. 30 yildan ortiq tajribaga ega mutaxassislar jamoasi bilan Farg‘ona mintaqasi va O‘zbekiston oltin sanoatining yetakchi ishlab chiqarish markazlaridan biri sifatida faoliyat yuritamiz.",
     aboutText2:
-      "Har bir mahsulotimiz ustalarimizning sinchkov mehnatitning va zamonaviy texnologiyalarning uyg'unligi natijasida yaratiladi. Mijozlar mamnuniyati va sifat biz uchun doimo ustuvordir.",
+      "To‘rt gektar yer maydonida joylashgan, 1 500 m² yopiq ishlab chiqarish maydoniga ega korxonamizda so‘nggi texnologiyalar bilan jihozlangan zamonaviy uskuna va xalqaro standartlarga muvofiq nazorat qilinadigan ishlab chiqarish jarayonlari orqali yuqori sifatli oltin qayta ishlashni amalga oshiramiz. Har bir ishlab chiqarish bosqichida sifat, samaradorlik, ishonchlilik va barqarorlik bizning asosiy qadriyatlarimizdir. 80 nafar mutaxassis xodimlarimiz bilan mahalliy hamda xalqaro bozorlarga ishonchli ishlab chiqarish va uzoq muddatli hamkorliklarni rivojlantirishni maqsad qilganmiz.",
     contactInfo: "Aloqa ma'lumotlari",
 
     // Categories
@@ -576,12 +600,14 @@ export const TRANSLATIONS = {
       "Vintage uslubidagi zumrad uzuk, boy rang va klassik dizayn bilan. Kollektsionerlar uchun noyob tanlov.",
     sparklingDiamondEarrings:
       "Yorqin olmosli sirg'alar, mukammal kesim va ajoyib porlash bilan. Maxsus voqealar uchun ideal.",
-    luxuryPlatinumRing: "Hashamatli platina uzuk, eng yuqori sifat va chidamlilik bilan. Abadiy sevgi ramzi.",
+    luxuryPlatinumRing:
+      "Hashamatli platina uzuk, eng yuqori sifat va chidamlilik bilan. Abadiy sevgi ramzi.",
     classicGoldChain:
       "Klassik oltin zanjir, an'anaviy dizayn va zamonaviy ishlov bilan. Har qanday kiyim bilan mos keladi.",
     elegantTennisBracelet:
       "Nafis tennis bilakuzuk, uzluksiz olmoslar va mukammal sozlash bilan. Hashamat va nafosatning ramzi.",
-    royalSapphireEarrings: "Qirollik safir sirg'alar, boy ko'k rang va oltin sozlash bilan. Aristokratik uslub uchun.",
+    royalSapphireEarrings:
+      "Qirollik safir sirg'alar, boy ko'k rang va oltin sozlash bilan. Aristokratik uslub uchun.",
 
     // Materials
     gold: "Oltin",
@@ -608,7 +634,8 @@ export const TRANSLATIONS = {
 
     // Contact
     contactTitle: "Biz bilan bog'laning",
-    contactDescription: "Shaxsiy xizmat uchun zargarlik mutaxassislarimiz bilan bog'laning",
+    contactDescription:
+      "Shaxsiy xizmat uchun zargarlik mutaxassislarimiz bilan bog'laning",
     address: "Manzil",
     phone: "Telefon",
     email: "Elektron pochta",
@@ -621,12 +648,14 @@ export const TRANSLATIONS = {
 
     // Recommended Collection
     recommendedTitle: "Tavsiya etilgan kolleksiya",
-    recommendedSubtitle: "Bizning ehtiyotkorlik bilan tanlangan ajoyib buyumlar kolleksiyasini kashf eting",
+    recommendedSubtitle:
+      "Bizning ehtiyotkorlik bilan tanlangan ajoyib buyumlar kolleksiyasini kashf eting",
 
     // Hero Section
     heroTitle: "FERGAGOLD",
     heroSubtitle: "Lüks Kuyumculuğun Sanatı",
-    heroDescription: "Eng yaxshi materiallardan iborat, har qanday maxsus voqealar uchun ishonchli kuyumlar.",
+    heroDescription:
+      "Eng yaxshi materiallardan iborat, har qanday maxsus voqealar uchun ishonchli kuyumlar.",
     exploreNow: "Ko'rib chiqish",
     callNow: "Hozirroq bog'lanish",
 
@@ -665,7 +694,8 @@ export const TRANSLATIONS = {
     customers: "Mamnun mijozlar",
     authentic: "Original",
     support: "Qo'llab-quvvatlash",
-    footerDescription: "Abadiy nafosatlik va qo'lda ishlangan sifatli zargarlik buyumlari",
+    footerDescription:
+      "Abadiy nafosatlik va qo'lda ishlangan sifatli zargarlik buyumlari",
     services: "Xizmatlar",
     repairRestoration: "Ta'mirlash va tiklash",
     bespokeGifts: "Maxsus sovg'alar",
@@ -684,9 +714,9 @@ export const TRANSLATIONS = {
     // About Section
     aboutTitle: "О нас",
     aboutText1:
-      "FERGAGOLD — самый надежный ювелирный магазин Ферганы с более чем 30-летним опытом работы. Мы производим ювелирные изделия ручной работы из высококачественного золота, серебра, платины и драгоценных камней.",
+      "FERGAGOLD — современное предприятие по переработке и производству золота, основанное в Ферганской области Узбекистана совместными инвестициями Турции и Азербайджана. С более чем 30-летним опытом нашей команды специалистов мы являемся одним из ведущих центров производства в Ферганской области и золотодобывающей отрасли Узбекистана.",
     aboutText2:
-      "Каждый наш продукт создается благодаря сочетанию кропотливого труда наших мастеров и современных технологий. Удовлетворенность клиентов и качество всегда являются для нас приоритетом.",
+      "Наше предприятие расположено на участке земли площадью четыре гектара и имеет 1500 м² закрытой производственной площади. Мы оснащены современным оборудованием с последними технологиями и осуществляем высококачественную переработку золота в соответствии с международными стандартами и контролируемыми производственными процессами. На каждом этапе производства качество, эффективность, надежность и устойчивость являются нашими основными ценностями. С командой из 80 специалистов мы стремимся к надежному производству и развитию долгосрочных партнерств как на местном, так и на международном рынках.",
     contactInfo: "Контактная информация",
 
     // Categories
@@ -730,7 +760,8 @@ export const TRANSLATIONS = {
       "Кольцо с изумрудом в винтажном стиле, насыщенный цвет и классический дизайн. Уникальный выбор для коллекционеров.",
     sparklingDiamondEarrings:
       "Сверкающие серьги с бриллиантами, идеальная огранка и потрясающий блеск. Идеально для особых случаев.",
-    luxuryPlatinumRing: "Роскошное платиновое кольцо высочайшего качества и долговечности. Символ вечной любви.",
+    luxuryPlatinumRing:
+      "Роскошное платиновое кольцо высочайшего качества и долговечности. Символ вечной любви.",
     classicGoldChain:
       "Классическая золотая цепь с традиционным дизайном и современной обработкой. Подходит к любой одежде.",
     elegantTennisBracelet:
@@ -763,7 +794,8 @@ export const TRANSLATIONS = {
 
     // Contact
     contactTitle: "Свяжитесь с нами",
-    contactDescription: "Свяжитесь с нашими экспертами по ювелирным изделиям для персонального обслуживания",
+    contactDescription:
+      "Свяжитесь с нашими экспертами по ювелирным изделиям для персонального обслуживания",
     address: "Адрес",
     phone: "Телефон",
     email: "Электронная почта",
@@ -776,12 +808,14 @@ export const TRANSLATIONS = {
 
     // Recommended Collection
     recommendedTitle: "Рекомендуемая коллекция",
-    recommendedSubtitle: "Откройте для себя нашу тщательно отобранную коллекцию исключительных изделий",
+    recommendedSubtitle:
+      "Откройте для себя нашу тщательно отобранную коллекцию исключительных изделий",
 
     // Hero Section
     heroTitle: "FERGAGOLD",
     heroSubtitle: "Искусство роскошного ювелирного дела",
-    heroDescription: "От лучших материалов и идеального дизайна для любого особого случая.",
+    heroDescription:
+      "От лучших материалов и идеального дизайна для любого особого случая.",
     exploreNow: "Познакомиться",
     callNow: "Свяжитесь сейчас",
 
@@ -820,7 +854,8 @@ export const TRANSLATIONS = {
     customers: "Довольных клиентов",
     authentic: "Оригинал",
     support: "Поддержка",
-    footerDescription: "Вечная элегантность и качественные ювелирные изделия ручной работы",
+    footerDescription:
+      "Вечная элегантность и качественные ювелирные изделия ручной работы",
     services: "Услуги",
     repairRestoration: "Ремонт и реставрация",
     bespokeGifts: "Эксклюзивные подарки",
@@ -839,9 +874,9 @@ export const TRANSLATIONS = {
     // About Section
     aboutTitle: "About Us",
     aboutText1:
-      "FERGAGOLD is Fergana's most trusted jewelry store with over 30 years of experience. We produce handcrafted jewelry from the highest quality gold, silver, platinum and precious stones.",
+      "FERGAGOLD is a modern gold processing and production facility established in Uzbekistan's Fergana region through joint Turkish and Azerbaijani investments. With over 30 years of experience, our team of specialists positions us as one of the leading production centers in the Fergana region and Uzbekistan's gold industry.",
     aboutText2:
-      "Each of our products is created through the combination of our craftsmen's meticulous work and modern technology. Customer satisfaction and quality are always our priority.",
+      "Our facility is located on a four-hectare land plot with 1,500 m² of covered production area. Equipped with state-of-the-art machinery and the latest technologies, we carry out high-quality gold processing in full compliance with international standards and strictly controlled production processes. At every stage of production, quality, efficiency, reliability, and sustainability are our top priorities. With a team of 80 skilled specialists, we aim to deliver reliable production and build long-term partnerships both in the local and international markets.",
     contactInfo: "Contact Information",
 
     // Categories
@@ -881,14 +916,18 @@ export const TRANSLATIONS = {
       "Luxury gold earrings with fine craftsmanship and perfect finish. For everyday and formal wear.",
     handcraftedSilverBracelet:
       "Handcrafted silver bracelet with unique design and high quality. For modern style lovers.",
-    vintageEmeraldRing: "Vintage-style emerald ring with rich color and classic design. Unique choice for collectors.",
+    vintageEmeraldRing:
+      "Vintage-style emerald ring with rich color and classic design. Unique choice for collectors.",
     sparklingDiamondEarrings:
       "Sparkling diamond earrings with perfect cut and amazing brilliance. Perfect for special occasions.",
-    luxuryPlatinumRing: "Luxury platinum ring with highest quality and durability. Symbol of eternal love.",
-    classicGoldChain: "Classic gold chain with traditional design and modern craftsmanship. Matches any outfit.",
+    luxuryPlatinumRing:
+      "Luxury platinum ring with highest quality and durability. Symbol of eternal love.",
+    classicGoldChain:
+      "Classic gold chain with traditional design and modern craftsmanship. Matches any outfit.",
     elegantTennisBracelet:
       "Elegant tennis bracelet with continuous diamonds and perfect setting. Symbol of luxury and sophistication.",
-    royalSapphireEarrings: "Royal sapphire earrings with rich blue color and gold setting. For aristocratic style.",
+    royalSapphireEarrings:
+      "Royal sapphire earrings with rich blue color and gold setting. For aristocratic style.",
 
     // Materials
     gold: "Gold",
@@ -915,7 +954,8 @@ export const TRANSLATIONS = {
 
     // Contact
     contactTitle: "Contact Us",
-    contactDescription: "Get in touch with our jewelry experts for personalized service",
+    contactDescription:
+      "Get in touch with our jewelry experts for personalized service",
     address: "Address",
     phone: "Phone",
     email: "Email",
@@ -928,12 +968,14 @@ export const TRANSLATIONS = {
 
     // Recommended Collection
     recommendedTitle: "Recommended Collection",
-    recommendedSubtitle: "Discover our carefully curated selection of exceptional pieces",
+    recommendedSubtitle:
+      "Discover our carefully curated selection of exceptional pieces",
 
     // Hero Section
     heroTitle: "FERGAGOLD",
     heroSubtitle: "The Art of Luxury Jewelry",
-    heroDescription: "From the finest materials to the most exquisite designs for any special occasion.",
+    heroDescription:
+      "From the finest materials to the most exquisite designs for any special occasion.",
     exploreNow: "Explore",
     callNow: "Call Now",
 
@@ -978,13 +1020,15 @@ export const TRANSLATIONS = {
     bespokeGifts: "Bespoke Gifts",
     allRightsReserved: "All rights reserved.",
   },
-}
+};
 
 // Update subcategories with actual products
 CATEGORIES.forEach((category) => {
   category.subcategories?.forEach((subcategory) => {
     subcategory.products = PRODUCTS.filter(
-      (product) => product.category === category.id && product.subcategory === subcategory.id,
-    )
-  })
-})
+      (product) =>
+        product.category === category.id &&
+        product.subcategory === subcategory.id
+    );
+  });
+});

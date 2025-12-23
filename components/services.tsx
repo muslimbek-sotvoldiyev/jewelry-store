@@ -9,33 +9,33 @@ export function Services() {
   const services = [
     {
       icon: Gem,
-      title: "Custom Design",
-      description: "Create bespoke pieces tailored to your unique vision and preferences",
+      title: t("customDesignTitle"),
+      description: t("customDesignDescription"),
     },
     {
       icon: Wrench,
-      title: "Repair & Restoration",
-      description: "Expert restoration and maintenance of your precious jewelry",
+      title: t("repairRestorationTitle"),
+      description: t("repairRestorationDescription"),
     },
     {
       icon: Gift,
-      title: "Bespoke Gifts",
-      description: "Curated collections for special occasions and memorable moments",
+      title: t("bespokeGiftsTitle"),
+      description: t("bespokeGiftsDescription"),
     },
     {
       icon: Scale,
-      title: "Valuation & Insurance",
-      description: "Professional appraisal and documentation for insurance purposes",
+      title: t("valuationInsuranceTitle"),
+      description: t("valuationInsuranceDescription"),
     },
     {
       icon: Ring,
-      title: "Engagement Rings",
-      description: "Custom-designed rings with certified precious stones",
+      title: t("engagementRingsTitle"),
+      description: t("engagementRingsDescription"),
     },
     {
       icon: Sparkles,
-      title: "Jewelry Cleaning",
-      description: "Professional cleaning and polishing to keep your pieces pristine",
+      title: t("jewelryCleaningTitle"),
+      description: t("jewelryCleaningDescription"),
     },
   ]
 
@@ -44,11 +44,11 @@ export function Services() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-light tracking-[0.08em] sm:tracking-[0.1em] mb-3 sm:mb-4 text-foreground">
-            Our Services
+            {t("ourServicesTitle")}
           </h2>
           <div className="w-12 sm:w-16 h-px bg-primary mx-auto mb-4 sm:mb-6" />
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            Beyond exceptional jewelry—we offer comprehensive services to care for and customize your treasures
+            {t("ourServicesSubtitle")}
           </p>
         </div>
 

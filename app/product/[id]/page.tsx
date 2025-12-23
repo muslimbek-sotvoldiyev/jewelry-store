@@ -67,7 +67,7 @@ export default function ProductPage({ params }: ProductPageProps) {
     <>
       <Header />
 
-      <main className="bg-white pt-28 md:pt-32">
+      <main className="bg-background pt-28 md:pt-32">
         <div className="container mx-auto px-6 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Images */}
@@ -83,13 +83,13 @@ export default function ProductPage({ params }: ProductPageProps) {
                   <>
                     <button
                       onClick={prevImage}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2 transition-all duration-300"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-foreground/80 hover:bg-white dark:hover:bg-foreground text-black dark:text-background rounded-full p-2 transition-all duration-300"
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </button>
                     <button
                       onClick={nextImage}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2 transition-all duration-300"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-foreground/80 hover:bg-white dark:hover:bg-foreground text-black dark:text-background rounded-full p-2 transition-all duration-300"
                     >
                       <ChevronRight className="h-5 w-5" />
                     </button>
@@ -105,7 +105,9 @@ export default function ProductPage({ params }: ProductPageProps) {
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`w-20 h-20 rounded overflow-hidden border-2 transition-all duration-300 ${
-                        index === currentImageIndex ? "border-black" : "border-gray-300"
+                        index === currentImageIndex
+                          ? "border-foreground dark:border-foreground"
+                          : "border-gray-300 dark:border-border"
                       }`}
                     >
                       <img
@@ -122,40 +124,42 @@ export default function ProductPage({ params }: ProductPageProps) {
             {/* Product Info */}
             <div>
               <div className="flex items-start justify-between mb-4">
-                <h1 className="text-3xl lg:text-4xl font-light tracking-wide">{t(product.nameKey)}</h1>
+                <h1 className="text-3xl lg:text-4xl font-light tracking-wide text-foreground">{t(product.nameKey)}</h1>
                 <Button variant="outline" size="sm" onClick={handleShare} className="ml-4 bg-transparent">
                   <Share2 className="h-4 w-4 mr-2" />
                   {t("share")}
                 </Button>
               </div>
 
-              <p className="text-2xl lg:text-3xl font-light mb-6">{formatPrice(product.priceUZS)}</p>
-              <p className="text-gray-600 mb-8 leading-relaxed text-lg">{t(product.descriptionKey)}</p>
+              <p className="text-2xl lg:text-3xl font-light mb-6 text-foreground">{formatPrice(product.priceUZS)}</p>
+              <p className="text-muted-foreground mb-8 leading-relaxed text-lg">{t(product.descriptionKey)}</p>
 
               {/* Specifications */}
               <div className="space-y-4 mb-8">
-                <h3 className="text-lg font-medium">{t("specifications")}</h3>
+                <h3 className="text-lg font-medium text-foreground">{t("specifications")}</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {Object.entries(product.specifications).map(
                     ([key, value]) =>
                       value && (
-                        <div key={key} className="flex justify-between py-2 border-b border-gray-100">
-                          <span className="text-sm font-medium capitalize">{t(key)}:</span>
-                          <span className="text-sm text-gray-600">{value}</span>
+                        <div key={key} className="flex justify-between py-2 border-b border-border">
+                          <span className="text-sm font-medium capitalize text-foreground">{t(key)}:</span>
+                          <span className="text-sm text-muted-foreground">{value}</span>
                         </div>
                       ),
                   )}
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-sm font-medium">{t("material")}:</span>
-                    <span className="text-sm text-gray-600 capitalize">{t(product.material)}</span>
+                  <div className="flex justify-between py-2 border-b border-border">
+                    <span className="text-sm font-medium text-foreground">{t("material")}:</span>
+                    <span className="text-sm text-muted-foreground capitalize">{t(product.material)}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-sm font-medium">{t("category")}:</span>
-                    <span className="text-sm text-gray-600 capitalize">{t(product.category)}</span>
+                  <div className="flex justify-between py-2 border-b border-border">
+                    <span className="text-sm font-medium text-foreground">{t("category")}:</span>
+                    <span className="text-sm text-muted-foreground capitalize">{t(product.category)}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-sm font-medium">{t("availability")}:</span>
-                    <span className={`text-sm ${product.inStock ? "text-green-600" : "text-red-600"}`}>
+                  <div className="flex justify-between py-2 border-b border-border">
+                    <span className="text-sm font-medium text-foreground">{t("availability")}:</span>
+                    <span
+                      className={`text-sm ${product.inStock ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
+                    >
                       {product.inStock ? t("inStock") : t("outOfStock")}
                     </span>
                   </div>
@@ -163,9 +167,9 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
 
               {/* Product Details */}
-              <div className="border-t pt-8">
-                <h3 className="text-lg font-medium mb-4">Product Details</h3>
-                <div className="space-y-2 text-sm text-gray-600">
+              <div className="border-t border-border pt-8">
+                <h3 className="text-lg font-medium mb-4 text-foreground">Product Details</h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
                   <p>• Handcrafted with premium materials</p>
                   <p>• Comes with authenticity certificate</p>
                   <p>• Free shipping and returns</p>
@@ -192,7 +196,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             />
             <button
               onClick={() => setIsImageModalOpen(false)}
-              className="absolute top-4 right-4 bg-white/80 hover:bg-white text-black rounded-full p-2"
+              className="absolute top-4 right-4 bg-white/80 dark:bg-foreground/80 hover:bg-white dark:hover:bg-foreground text-black dark:text-background rounded-full p-2"
             >
               <X className="h-5 w-5" />
             </button>
@@ -200,13 +204,13 @@ export default function ProductPage({ params }: ProductPageProps) {
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-foreground/80 hover:bg-white dark:hover:bg-foreground text-black dark:text-background rounded-full p-2"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black rounded-full p-2"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-foreground/80 hover:bg-white dark:hover:bg-foreground text-black dark:text-background rounded-full p-2"
                 >
                   <ChevronRight className="h-6 w-6" />
                 </button>
@@ -220,7 +224,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       <Dialog open={isShareOpen} onOpenChange={setIsShareOpen}>
         <DialogContent className="max-w-md">
           <div className="p-6">
-            <h3 className="text-lg font-medium mb-4">
+            <h3 className="text-lg font-medium mb-4 text-foreground">
               {t("share")} {t(product.nameKey)}
             </h3>
             <div className="space-y-3">

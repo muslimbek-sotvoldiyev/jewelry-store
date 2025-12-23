@@ -56,28 +56,84 @@ function Header() {
 
       <div className="container mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
-            <div
-              className={`rounded-lg overflow-hidden ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-500 relative ${
-                isScrolled ? "w-8 sm:w-10 h-8 sm:h-10" : "w-10 sm:w-12 h-10 sm:h-12"
-              }`}
-            >
-              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <img
-                src="/FERGALOGO_page-0001.jpg"
-                alt="FERGAGOLD Logo"
-                className="w-full h-full object-cover bg-background group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </Link>
+           
+
+
+
+
+
+<Link
+  href="/"
+  className="flex items-center gap-2 sm:gap-3 flex-shrink-0 group focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md"
+  aria-label="FERGAGOLD bosh sahifaga"
+>
+  <div
+    className={`
+      relative rounded-lg overflow-hidden
+      ring-2 ring-primary/20 group-hover:ring-primary/50
+      transition-all duration-500 ease-out
+      ${isScrolled ? 'w-9 sm:w-11 h-9 sm:h-11' : 'w-11 sm:w-14 h-11 sm:h-14'}
+    `}
+  >
+    {/* Hover overlay (ikkala rejimda ham ishlaydi) */}
+    <div
+      className="
+        absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent
+        opacity-0 group-hover:opacity-100
+        transition-opacity duration-400
+        z-10
+      "
+    />
+
+    {/* Light mode uchun logo (dark mode'da yashirinadi) */}
+    <img
+      src="/logowhite.jpg"          // ← Light mode logo (masalan, qorong'i rangli)
+      alt="FERGAGOLD Logo - Light"
+      className="
+        absolute inset-0 w-full h-full object-contain object-center
+        
+        block dark:hidden           // ← dark bo'lsa yashiriladi
+        group-hover:scale-[1.08]
+        transition-transform duration-500 ease-out
+      "
+      width={56}
+      height={56}
+      loading="eager"
+      decoding="async"
+      fetchPriority="high"
+    />
+
+    {/* Dark mode uchun logo (light mode'da yashirinadi) */}
+    <img
+      src="/logodark.png"           // ← Dark mode logo (masalan, oq yoki och rangli)
+      alt="FERGAGOLD Logo - Dark"
+      className="
+        absolute inset-0 w-full h-full object-contain object-center
+        bg-background/50 backdrop-blur-[2px]
+        hidden dark:block           // ← faqat dark bo'lsa ko'rinadi
+        group-hover:scale-[1.08]
+        transition-transform duration-500 ease-out
+      "
+      width={56}
+      height={56}
+      loading="eager"
+      decoding="async"
+      fetchPriority="high"
+    />
+  </div>
+</Link>
+
+
+
+
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {[
-              { href: "#about", label: t("about") || "Haqida" },
-              { href: "#services", label: t("services") || "Xizmatlar" },
-              { href: "#products", label: t("products") || "Mahsulotlar" },
-              { href: "#contact", label: t("contact") || "Aloqa" },
+              { href: "/#about", label: t("about") || "Haqida" },
+              { href: "/#services", label: t("services") || "Xizmatlar" },
+              { href: "/#products", label: t("products") || "Mahsulotlar" },
+              { href: "/#contact", label: t("contact") || "Aloqa" },
             ].map((link) => (
               <Link
                 key={link.href}

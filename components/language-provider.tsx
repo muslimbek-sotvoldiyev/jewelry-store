@@ -1,9 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, type ReactNode } from "react"
-import { TRANSLATIONS } from "@/lib/data"
-
-type Language = "tr" | "uz" | "ru" | "en"
+import { translations, type Language } from "@/lib/translations"
 
 interface LanguageContextType {
   language: Language
@@ -18,7 +16,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("tr")
 
   const t = (key: string): string => {
-    return TRANSLATIONS[language]?.[key as keyof (typeof TRANSLATIONS)[Language]] || key
+    const translation = translations[language]
+    return (translation as any)[key] || key
   }
 
   const formatPrice = (price: number): string => {

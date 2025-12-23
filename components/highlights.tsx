@@ -9,23 +9,23 @@ export function Highlights() {
   const highlights = [
     {
       icon: Sparkles,
-      title: "Premium Quality",
-      description: "100% authentic materials with expert craftsmanship",
+      title: t("premiumQualityTitle"),
+      description: t("premiumQualityDescription"),
     },
     {
       icon: Award,
-      title: "Award Winning",
-      description: "Recognized for excellence and innovation in jewelry design",
+      title: t("awardWinningTitle"),
+      description: t("awardWinningDescription"),
     },
     {
       icon: Clock,
-      title: "Expert Consultation",
-      description: "Personalized guidance from seasoned jewelry professionals",
+      title: t("expertConsultationTitle"),
+      description: t("expertConsultationDescription"),
     },
     {
       icon: Shield,
-      title: "Guaranteed",
-      description: "Lifetime authenticity guarantee on all pieces",
+      title: t("guaranteedTitle"),
+      description: t("guaranteedDescription"),
     },
   ]
 

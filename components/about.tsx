@@ -97,14 +97,14 @@ export function About() {
                   <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">{t("phone")}</p>
-                    <p className="text-muted-foreground text-xs md:text-sm">+998 73 244 55 66</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">+998 73 226 13 33</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">{t("email")}</p>
-                    <p className="text-muted-foreground text-xs md:text-sm">info@fergagold.uz</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">info@fergagold.com</p>
                   </div>
                 </div>
               </div>
