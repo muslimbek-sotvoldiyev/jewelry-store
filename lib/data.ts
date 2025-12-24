@@ -41,7 +41,7 @@ export const CATEGORIES: Category[] = [
     nameKey: "rings",
     description: "Elegant rings for every occasion",
     image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+      "/product/product1.png",
     subcategories: [
       {
         id: "engagement",
@@ -60,7 +60,7 @@ export const CATEGORIES: Category[] = [
     nameKey: "necklaces",
     description: "Beautiful necklaces and pendants",
     image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
+      "/product/product2.png",
     subcategories: [
       {
         id: "pendants",
@@ -79,7 +79,7 @@ export const CATEGORIES: Category[] = [
     nameKey: "earrings",
     description: "Stunning earrings for any style",
     image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
+      "/product/product1.png",
     subcategories: [
       {
         id: "studs",
@@ -98,7 +98,7 @@ export const CATEGORIES: Category[] = [
     nameKey: "bracelets",
     description: "Exquisite bracelets and bangles",
     image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
+      "/product/product4.png",
     subcategories: [
       {
         id: "bangles",
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 15000000,
     priceUSD: 1200,
     image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
+      "product/product3.png",
     images: [
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
@@ -148,7 +148,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 8500000,
     priceUSD: 680,
     image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
+      "product/product2.png",
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 6200000,
     priceUSD: 495,
     image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
+      "/product/product1.png",
     images: [
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
@@ -199,7 +199,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 4800000,
     priceUSD: 385,
     image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+      "product/product4.png",
     images: [
       "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80",
@@ -225,7 +225,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 22000000,
     priceUSD: 1760,
     image:
-      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
+      "product/product5.png",
     images: [
       "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
@@ -250,7 +250,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 18500000,
     priceUSD: 1480,
     image:
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
+      "product/product1.png",
     images: [
       "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
@@ -275,7 +275,7 @@ export const PRODUCTS: Product[] = [
     priceUZS: 28000000,
     priceUSD: 2240,
     image:
-      "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=600&q=80",
+      "product/product1.png",
     images: [
       "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=600&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80",
@@ -293,81 +293,7 @@ export const PRODUCTS: Product[] = [
       stone: "None",
     },
   },
-  {
-    id: "8",
-    nameKey: "goldChain",
-    descriptionKey: "classicGoldChain",
-    priceUZS: 12000000,
-    priceUSD: 960,
-    image:
-      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-    ],
-    category: "necklaces",
-    subcategory: "chains",
-    material: "gold",
-    inStock: true,
-    featured: false,
-    recommended: true,
-    specifications: {
-      weight: "15g",
-      length: "50cm",
-      purity: "18K Gold",
-      stone: "None",
-    },
-  },
-  {
-    id: "9",
-    nameKey: "tennisBracelet",
-    descriptionKey: "elegantTennisBracelet",
-    priceUZS: 35000000,
-    priceUSD: 2800,
-    image:
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
-    ],
-    category: "bracelets",
-    subcategory: "tennis",
-    material: "diamond",
-    inStock: true,
-    featured: true,
-    recommended: true,
-    specifications: {
-      weight: "12g",
-      size: "18cm",
-      purity: "18K White Gold",
-      stone: "3ct Diamonds",
-    },
-  },
-  {
-    id: "10",
-    nameKey: "sapphireEarrings",
-    descriptionKey: "royalSapphireEarrings",
-    priceUZS: 24000000,
-    priceUSD: 1920,
-    image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80",
-    ],
-    category: "earrings",
-    subcategory: "studs",
-    material: "sapphire",
-    inStock: true,
-    featured: false,
-    recommended: true,
-    specifications: {
-      weight: "3.8g",
-      size: "10mm",
-      purity: "18K Gold",
-      stone: "2ct Sapphires",
-    },
-  },
+ 
 ];
 
 export const MATERIALS = [

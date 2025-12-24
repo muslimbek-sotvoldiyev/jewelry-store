@@ -9,6 +9,7 @@ export const uz: Translation = {
   back: "Orqaga",
   viewAll: "Barchasini ko'rish",
   share: "Ulashish",
+  direction: "Yo'nalishimiz",
 
   // About Section
   aboutTitle: "Biz haqimizda",
@@ -172,7 +173,7 @@ export const uz: Translation = {
   customers: "Mamnun mijozlar",
   authentic: "Original",
   footerDescription: "Abadiy nafosatlik va qo'lda ishlangan sifatli zargarlik buyumlari",
-  services: "Xizmatlar",
+  direction: "Yo'nalishimiz",
   repairRestoration: "Ta'mirlash va tiklash",
   bespokeGifts: "Maxsus sovg'alar",
   allRightsReserved: "Barcha huquqlar himoyalangan.",
@@ -182,4 +183,28 @@ export const uz: Translation = {
   featuredProducts: "Taniqli mahsulotlar",
   featuredDescription: "Eng mashhur va ajoyib zargarlik buyumlarimizni kashf eting",
   noProductsFound: "Mahsulotlar topilmadi",
+
+  // Mission and Vision
+   sectionLabel: "Missiya & Vizyon",
+    sectionTitle: "Bizning Yo'nalishimiz",
+    missionLabel: "Missiyamiz",
+    missionTitle: "Sifat va Ishonch",
+    missionText: "Ferga Gold kompaniyasining missiyasi O'zbekistonning Farg'ona viloyatida joylashgan zamonaviy ishlab chiqarish korxonasida, yuqori texnologiyali mashinalar va tajribali ustalari bilan yuqori sifat standartlarida oltin ishlash va ishlab chiqarishni amalga oshirishdir.",
+    missionSubtext: "Ishlab chiqarish jarayonlarimizni rejalashtirilgan, nazorat qilinadigan va samarali tarzda boshqarish; ishonchli mahsulotlar taqdim etish, xodimlar va biznes hamkorlar uchun shaffof, intizomli va barqaror ish muhitini yaratish asosiy maqsadimizdir.",
+    visionLabel: "Vizyonumiz",
+    visionTitle: "Global Liderlik",
+    visionText: "Ferga Gold kompaniyasining vizyoni yuqori darajadagi ishlab chiqarish texnologiyasi, kuchli hunarmandchilik va barqaror sifat yondashuvi bilan xalqaro bozorlarda standartlarni belgilaydigan oltin ishlash brendi bo'lishdir.",
+    visionSubtext: "O'zbekiston markazidagi ishlab chiqarish quvvatini global miqyosda strategik ustunlikga aylantirish, ishonchlilik va ishlab chiqarish quvvati bilan global biznes hamkorlarning birinchi tanlovi bo'lishni maqsad qilganmiz.",
+    yearsExperience: "Yillik Tajriba",
+    pureGold: "Sof Oltin",
+    innovation: "Innovatsiya",
+    innovationDesc: "Texnologiya va hunarmandchilik",
+    sustainability: "Barqarorlik",
+    sustainabilityDesc: "Axloqiy mas'uliyat",
+    missionImageAlt: "Oltin hunarmandchiligi",
+    visionImageAlt: "Jahon oltin bozori",
+    missionImageCaption: "Sof va yuqori sifatli oltin",
+    visionImageCaption: "Jahon miqyosida yetakchi"
+
+
 }

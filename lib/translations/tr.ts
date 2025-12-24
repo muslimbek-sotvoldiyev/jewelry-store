@@ -9,6 +9,8 @@ export const tr: Translation = {
   back: "Geri",
   viewAll: "Tümünü Gör",
   share: "Paylaş",
+  direction: "Yönümüz",
+
 
   // About Section
   aboutTitle: "Hakkımızda",
@@ -166,7 +168,6 @@ export const tr: Translation = {
   customers: "Mutlu Müşteri",
   authentic: "Orijinal",
   footerDescription: "Ebedi zarafet ve el işçiliği kaliteli mücevherler",
-  services: "Hizmetler",
   repairRestoration: "Onarım ve Restorasyon",
   bespokeGifts: "Özel Hediyeler",
   allRightsReserved: "Tüm hakları saklıdır.",
@@ -176,4 +177,28 @@ export const tr: Translation = {
   featuredProducts: "Öne Çıkan Ürünler",
   featuredDescription: "En popüler ve muhteşem ürünlerimizi keşfedin",
   noProductsFound: "Ürün bulunamadı",
+
+  // Mission and Vision
+    sectionLabel: "Misyon & Vizyon",
+    sectionTitle: "Yönümüz",
+    missionLabel: "Misyonumuz",
+    missionTitle: "Kalite ve Güven",
+    missionText: "Ferga Gold'un misyonu; Özbekistan'ın Fergana vilayetinde yer alan modern üretim tesisinde, üst düzey teknolojiyle donatılmış makine parkuru ve deneyimli ustalık kadrosu ile yüksek kalite standartlarında altın işleme ve üretim gerçekleştirmektir.",
+    missionSubtext: "Üretim süreçlerimizi planlı, kontrollü ve verimli şekilde yöneterek; güvenilir ürünler sunmak, çalışanlar ve iş ortakları için şeffaf, disiplinli ve sürdürülebilir bir iş ortamı oluşturmak temel hedefimizdir.",
+    visionLabel: "Vizyonumuz",
+    visionTitle: "Küresel Liderlik",
+    visionText: "Ferga Gold'un vizyonu; üst düzey üretim teknolojisi, güçlü ustalık ve istikrarlı kalite anlayışıyla uluslararası pazarlarda standart belirleyen bir altın işleme markası olmaktır.",
+    visionSubtext: "Özbekistan merkezli üretim gücünü küresel ölçekte stratejik bir avantaja dönüştürerek, güvenilirliği ve üretim kapasitesiyle global iş ortaklarının öncelikli tercihi haline gelmeyi hedefleriz.",
+    yearsExperience: "Yıllık Deneyim",
+    pureGold: "Saf Altın",
+    innovation: "İnovasyon",
+    innovationDesc: "Teknoloji ve ustalık",
+    sustainability: "Sürdürülebilirlik",
+    sustainabilityDesc: "Etik sorumluluk",
+    missionImageAlt: "Altın işçiliği",
+    visionImageAlt: "Küresel altın piyasası",
+    missionImageCaption: "Saf ve yüksek kaliteli altın",
+    visionImageCaption: "Dünya çapında lider" 
+
+
 }

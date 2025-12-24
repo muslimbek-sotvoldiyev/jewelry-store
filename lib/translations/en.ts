@@ -9,6 +9,8 @@ export const en: Translation = {
   back: "Back",
   viewAll: "View All",
   share: "Share",
+  direction: "Direction",
+
 
   // About Section
   aboutTitle: "About Us",
@@ -180,7 +182,6 @@ export const en: Translation = {
   customers: "Happy Customers",
   authentic: "Authentic",
   footerDescription: "Timeless elegance and handcrafted quality jewelry",
-  services: "Services",
   repairRestoration: "Repair & Restoration",
   bespokeGifts: "Bespoke Gifts",
   allRightsReserved: "All rights reserved.",
@@ -190,4 +191,28 @@ export const en: Translation = {
   featuredProducts: "Featured Products",
   featuredDescription: "Discover our most popular and stunning jewelry pieces",
   noProductsFound: "No products found",
-}
+
+  // Mission and Vision
+    sectionLabel: "Mission & Vision",
+    sectionTitle: "Our Direction",
+    missionLabel: "Our Mission",
+    missionTitle: "Quality and Trust",
+    missionText: "Ferga Gold's mission is to carry out high-quality gold processing and production with state-of-the-art technology-equipped machinery and an experienced team of craftsmen at our modern production facility located in Fergana region, Uzbekistan.",
+    missionSubtext: "Our fundamental goal is to manage our production processes in a planned, controlled, and efficient manner; to offer reliable products, and to create a transparent, disciplined, and sustainable working environment for our employees and business partners.",
+    visionLabel: "Our Vision",
+    visionTitle: "Global Leadership",
+    visionText: "Ferga Gold's vision is to become a gold processing brand that sets standards in international markets with superior production technology, strong craftsmanship, and a consistent quality approach.",
+    visionSubtext: "We aim to transform our Uzbekistan-based production power into a strategic advantage on a global scale, becoming the preferred choice of global business partners with our reliability and production capacity.",
+    yearsExperience: "Years Experience",
+    pureGold: "Pure Gold",
+    innovation: "Innovation",
+    innovationDesc: "Technology and craftsmanship",
+    sustainability: "Sustainability",
+    sustainabilityDesc: "Ethical responsibility",
+    missionImageAlt: "Gold craftsmanship",
+    visionImageAlt: "Global gold market",
+    missionImageCaption: "Pure and high-quality gold",
+    visionImageCaption: "Leading worldwide"
+
+
+  }
