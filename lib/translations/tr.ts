@@ -19,6 +19,7 @@ export const tr: Translation = {
   aboutText2:
     "Dört dönüm arazi üzerine kurulu, 1.500 m² kapalı alana sahip tesisimizde son teknoloji makine parkuru ve uluslararası standartlara uygun kontrollü üretim süreçleriyle yüksek kalitede altın işleme gerçekleştiriyoruz. Her bir üretim aşamasında kalite, verimlilik, güvenilirlik ve sürdürülebilirlik en öncelikli değerlerimizdir. 80 kişilik uzman ekibimizle hem yerel hem de uluslararası pazarlara yönelik güvenilir üretim ve uzun vadeli iş ortaklıkları hedefliyoruz.",
   contactInfo: "İletişim Bilgileri",
+  locationText: "Fergana, Havalimanı Caddesi 8A",
 
   // Categories
   all: "Tümü",

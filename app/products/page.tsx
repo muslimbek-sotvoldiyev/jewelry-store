@@ -80,8 +80,8 @@ function ProductsPageContent() {
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {filteredProducts.map((product) => (
-                  <Link key={product.id} href={`/product/${product.id}`} className="group">
-                    <div className="overflow-hidden rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col hover:shadow-lg">
+                  // <Link key={product.id} href={`/product/${product.id}`} className="group">
+                    <div key={product.id} className="overflow-hidden rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col hover:shadow-lg">
                       {/* Image */}
                       <div className="relative w-full pt-[100%] bg-muted overflow-hidden">
                         <img
@@ -109,7 +109,7 @@ function ProductsPageContent() {
                         </div>
                       </div>
                     </div>
-                  </Link>
+                  // </Link>
                 ))}
               </div>
             ) : (

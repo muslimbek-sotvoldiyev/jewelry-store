@@ -90,7 +90,7 @@ export function About() {
                   <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground">{t("address")}</p>
-                    <p className="text-muted-foreground text-xs md:text-sm">Farg'ona, Mustaqillik 123</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">{t("locationText")}</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -110,30 +110,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-12">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">30+</div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
-                  {t("experience")}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">10K+</div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
-                  {t("customers")}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">100%</div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
-                  {t("authentic")}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-light mb-1 md:mb-2 text-foreground">24/7</div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">{t("support")}</div>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>

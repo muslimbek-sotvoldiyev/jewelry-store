@@ -97,7 +97,7 @@ export default function Direction() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-5 pt-4">
+              {/* <div className="grid grid-cols-2 gap-5 pt-4">
                 <div
                   className="group cursor-pointer"
                   onMouseEnter={() => setHoveredStat(1)}
@@ -106,7 +106,6 @@ export default function Direction() {
                   <div className="relative overflow-hidden rounded-xl bg-card/50 border border-primary/20 p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5">
                     <div className={`absolute inset-0 bg-primary/5 transition-opacity duration-300 ${hoveredStat === 1 ? "opacity-100" : "opacity-0"}`}></div>
                     <div className="relative">
-                      <p className="text-4xl font-serif font-light text-primary mb-2">25+</p>
                       <p className="text-foreground/60 text-xs tracking-wide uppercase">{t("yearsExperience")}</p>
                     </div>
                   </div>
@@ -125,7 +124,7 @@ export default function Direction() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Mission Visual with Image */}

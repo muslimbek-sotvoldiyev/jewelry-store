@@ -18,6 +18,7 @@ export const uz: Translation = {
   aboutText2:
     "To'rt gektar yer maydonida joylashgan, 1 500 m² yopiq ishlab chiqarish maydoniga ega korxonamizda so'nggi texnologiyalar bilan jihozlangan zamonaviy uskuna va xalqaro standartlarga muvofiq nazorat qilinadigan ishlab chiqarish jarayonlari orqali yuqori sifatli oltin qayta ishlashni amalga oshiramiz. Har bir ishlab chiqarish bosqichida sifat, samaradorlik, ishonchlilik va barqarorlik bizning asosiy qadriyatlarimizdir. 80 nafar mutaxassis xodimlarimiz bilan mahalliy hamda xalqaro bozorlarga ishonchli ishlab chiqarish va uzoq muddatli hamkorliklarni rivojlantirishni maqsad qilganmiz.",
   contactInfo: "Aloqa ma'lumotlari",
+  locationText: "Farg‘ona, Aeroport ko‘chasi 8A",
 
   // Categories
   all: "Barchasi",

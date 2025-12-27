@@ -9,115 +9,181 @@ export default function Footer() {
 
   return (
     <footer className="bg-card border-t border-primary/20">
-      <div className="container mx-auto px-6 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div>
-            <h3 className="text-2xl font-serif font-light tracking-[0.2em] mb-6 text-foreground">FERGA GOLD</h3>
-            <p className="text-foreground/70 leading-relaxed mb-6 text-sm">
-              {t("footerDescription") || "Timeless elegance and handcrafted jewelry of exceptional quality"}
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
-              </a>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Content */}
+        <div className="py-12 md:py-16 lg:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+            
+            {/* Brand Section - Takes more space */}
+            <div className="lg:col-span-4">
+              <h3 className="text-2xl md:text-3xl font-serif font-light tracking-[0.2em] mb-4 text-foreground">
+                FERGA GOLD
+              </h3>
+              <p className="text-foreground/70 leading-relaxed mb-6 text-sm max-w-sm">
+                {t("footerDescription") || "Timeless elegance and handcrafted jewelry of exceptional quality"}
+              </p>
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
+                  aria-label="Youtube"
+                >
+                  <Youtube className="h-4 w-4" />
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-medium mb-6 text-foreground">{t("about") || "About"}</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("home") || "Home"}
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("about") || "About"}
-                </Link>
-              </li>
-              <li>
-                <Link href="#direction" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("direction") || "Direction"}
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("contact") || "Contact"}
-                </Link>
-              </li>
-            </ul>
-          </div>
+            {/* Quick Links */}
+            <div className="lg:col-span-2">
+              <h4 className="text-base font-semibold mb-5 text-foreground tracking-wide">
+                {t("about") || "About"}
+              </h4>
+              <nav>
+                <ul className="space-y-3">
+                  <li>
+                    <Link 
+                      href="/" 
+                      className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                    >
+                      {t("home") || "Home"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="#about" 
+                      className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                    >
+                      {t("about") || "About"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="#direction" 
+                      className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                    >
+                      {t("direction") || "Direction"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      href="#contact" 
+                      className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
+                    >
+                      {t("contact") || "Contact"}
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-medium mb-6 text-foreground">{t("services") || "Services"}</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("customDesign") || "Custom Design"}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("repairRestoration") || "Repair & Restoration"}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("valuation") || "Valuation"}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-foreground/70 hover:text-primary transition-colors text-sm">
-                  {t("bespokeGifts") || "Bespoke Gifts"}
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Empty space for better layout on large screens */}
+            <div className="hidden lg:block lg:col-span-2"></div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-medium mb-6 text-foreground">{t("contactInfo") || "Contact Info"}</h4>
-            <div className="space-y-4 text-foreground/70 text-sm">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground text-sm mb-0.5">{t("address") || "Address"}</p>
-                  <p className="text-foreground/70">Fergana, Independence 123</p>
+            {/* Contact Info */}
+            <div className="lg:col-span-4">
+              <h4 className="text-base font-semibold mb-5 text-foreground tracking-wide">
+                {t("contactInfo") || "Contact Info"}
+              </h4>
+              <div className="space-y-5">
+                {/* Address */}
+                <div className="flex items-start gap-3 group">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <MapPin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium text-foreground text-sm mb-1">
+                      {t("address") || "Address"}
+                    </p>
+                    <p className="text-foreground/70 text-sm leading-relaxed">
+                      Fergana, Independence 123
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground text-sm mb-0.5">{t("phone") || "Phone"}</p>
-                  <p className="text-foreground/70">+998 73 226 13 33</p>
+
+                {/* Phone */}
+                <div className="flex items-start gap-3 group">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Phone className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium text-foreground text-sm mb-1">
+                      {t("phone") || "Phone"}
+                    </p>
+                    <a 
+                      href="tel:+998732261333" 
+                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
+                    >
+                      +998 73 226 13 33
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground text-sm mb-0.5">{t("email") || "Email"}</p>
-                  <p className="text-foreground/70">info@fergagold.com</p>
+
+                {/* Email */}
+                <div className="flex items-start gap-3 group">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Mail className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-medium text-foreground text-sm mb-1">
+                      {t("email") || "Email"}
+                    </p>
+                    <a 
+                      href="mailto:info@fergagold.com" 
+                      className="text-foreground/70 hover:text-primary text-sm transition-colors break-all"
+                    >
+                      info@fergagold.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-primary/20 mt-12 pt-8 text-center text-foreground/60 text-sm">
-          <p>&copy; 2025 FERGA GOLD. {t("allRightsReserved") || "All rights reserved."}</p>
+        {/* Footer Bottom */}
+        <div className="border-t border-primary/20 py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-foreground/60 text-sm text-center sm:text-left">
+              &copy; 2025 FERGA GOLD. {t("allRightsReserved") || "All rights reserved."}
+            </p>
+            <div className="flex items-center gap-6">
+              <Link 
+                href="#" 
+                className="text-foreground/60 hover:text-primary text-sm transition-colors"
+              >
+                {t("privacyPolicy") || "Privacy Policy"}
+              </Link>
+              <Link 
+                href="#" 
+                className="text-foreground/60 hover:text-primary text-sm transition-colors"
+              >
+                {t("terms") || "Terms of Service"}
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -14,6 +14,7 @@ export interface Translation {
   aboutText1: string;
   aboutText2: string;
   contactInfo: string;
+  locationText: string;
 
   // Categories
   all: string;
