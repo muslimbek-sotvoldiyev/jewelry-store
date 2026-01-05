@@ -5,11 +5,8 @@ import { ChevronLeft, ChevronRight, MapPin, Phone, Mail } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 const aboutImages = [
-  "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=800&q=80",
+  "/fergagoldabout1.png",
+  "/fergagoldabout2.png"
 ]
 
 export function About() {
