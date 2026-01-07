@@ -104,9 +104,9 @@ function ProductsPageContent() {
                         <p className="text-xs sm:text-sm text-muted-foreground mb-4 flex-1">
                           {product.specifications.purity && <span>{product.specifications.purity}</span>}
                         </p>
-                        <div className="text-lg sm:text-xl font-light text-primary">
+                        {/* <div className="text-lg sm:text-xl font-light text-primary">
                           {Math.round(product.priceUSD)}$
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   // </Link>
