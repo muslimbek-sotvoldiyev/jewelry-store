@@ -19,7 +19,7 @@ export const en: Translation = {
   aboutText2:
     "Our facility is located on a four-hectare land plot with 1,500 m² of covered production area. Equipped with state-of-the-art machinery and the latest technologies, we carry out high-quality gold processing in full compliance with international standards and strictly controlled production processes. At every stage of production, quality, efficiency, reliability, and sustainability are our top priorities. With a team of 80 skilled specialists, we aim to deliver reliable production and build long-term partnerships both in the local and international markets.",
   contactInfo: "Contact Information",
-  locationText: "Fergana, Airport Street 8A",
+  locationText: "Farg'ona viloyati Airoport ko'chasi 8A Farg'ona",
 
   // Categories
   all: "All",
