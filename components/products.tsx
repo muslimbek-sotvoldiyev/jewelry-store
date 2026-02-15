@@ -1,3 +1,4 @@
+// components/products.tsx
 "use client"
 
 import { useLanguage } from "@/components/language-provider"
@@ -15,10 +16,12 @@ export function Products() {
             {t("mahsulotlar")}
           </h2>
           <div className="w-12 sm:w-16 h-px bg-primary mx-auto mb-4 sm:mb-6" />
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">{t("exploreCollections")}</p>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
+            {t("exploreCollections")}
+          </p>
         </div>
 
-        {/* Category Carousel */}
+        {/* Category Carousel with API Data */}
         <div className="mb-12 sm:mb-16 md:mb-20">
           <CategoryCarousel />
         </div>
@@ -27,10 +30,12 @@ export function Products() {
         <div className="text-center">
           <Link
             href="/products"
-            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium text-sm sm:text-base hover:bg-primary/90 transition-all duration-300 hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium text-sm sm:text-base hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:scale-105 transform"
           >
-            {t("viewAllProducts")}
-            <span className="ml-2">→</span>
+            {t("viewAllProducts") || "View All Products"}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
           </Link>
         </div>
       </div>
