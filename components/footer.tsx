@@ -118,7 +118,7 @@ export default function Footer() {
                       {t("address") || "Address"}
                     </p>
                     <p className="text-foreground/70 text-sm leading-relaxed">
-                      Fergana, Independence 123
+                      Farg'ona Airoport 8A 
                     </p>
                   </div>
                 </div>

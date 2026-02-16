@@ -68,7 +68,7 @@ export function Contact() {
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Fergana, Uzbekistan</p>
-                <p className="text-xs sm:text-sm text-foreground font-medium">Mustaqillik St. 123</p>
+                <p className="text-xs sm:text-sm text-foreground font-medium">Farg'ona Airoport 8A</p>
               </div>
 
               <div className="bg-card border border-border rounded-lg p-5 sm:p-6 text-center hover:border-primary/50 transition-colors">

@@ -1,6 +1,14 @@
 // lib/api-client.ts
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
+// Frontend types - lib/api-client.ts yoki types.ts
+
+export enum Quality {
+  K14 = '14K',
+  K18 = '18K',
+  K22 = '22K',
+}
+
 export interface Category {
   id: number;
   name_uz: string;
@@ -14,14 +22,28 @@ export interface Category {
 export interface Product {
   id: number;
   name: string;
-  weight: number;
-  images: string[]; // Full URLs: ["http://localhost:3000/uploads/img1.jpg"]
+  weight: number; // float (gramm)
+  comment?: string; // Izoh
+  size?: string; // O'lcham
+  quality?: Quality; // 14K, 18K, 22K
+  images: string[]; // Full URLs
   category_id: number;
   category?: Category;
   createdAt: string;
   updatedAt: string;
 }
 
+// Store slice interface
+export interface ProductFormData {
+  name: string;
+  weight: number | string; // Input'da string bo'lishi mumkin
+  comment?: string;
+  size?: string;
+  quality?: Quality;
+  category_id: number;
+  images?: File[];
+  removeImages?: string[];
+}
 // Categories API
 export async function fetchCategories(): Promise<Category[]> {
   try {
