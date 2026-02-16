@@ -25,7 +25,7 @@ export interface Product {
 // Categories API
 export async function fetchCategories(): Promise<Category[]> {
   try {
-    const response = await fetch(`${API_BASE_URL}/categories`, {
+    const response = await fetch(`${API_BASE_URL}categories`, {
       cache: 'no-store', // Always get fresh data
     });
     
@@ -42,7 +42,7 @@ export async function fetchCategories(): Promise<Category[]> {
 
 export async function fetchCategoryById(id: number): Promise<Category | null> {
   try {
-    const response = await fetch(`${API_BASE_URL}/categories/${id}`, {
+    const response = await fetch(`${API_BASE_URL}categories/${id}`, {
       cache: 'no-store',
     });
     
@@ -61,8 +61,8 @@ export async function fetchCategoryById(id: number): Promise<Category | null> {
 export async function fetchProducts(categoryId?: number): Promise<Product[]> {
   try {
     const url = categoryId 
-      ? `${API_BASE_URL}/products?category_id=${categoryId}`
-      : `${API_BASE_URL}/products`;
+      ? `${API_BASE_URL}products?category_id=${categoryId}`
+      : `${API_BASE_URL}products`;
       
     const response = await fetch(url, {
       cache: 'no-store',
@@ -81,7 +81,7 @@ export async function fetchProducts(categoryId?: number): Promise<Product[]> {
 
 export async function fetchProductById(id: number): Promise<Product | null> {
   try {
-    const response = await fetch(`${API_BASE_URL}/products/${id}`, {
+    const response = await fetch(`${API_BASE_URL}products/${id}`, {
       cache: 'no-store',
     });
     
