@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react"
-import { useLanguage } from "@/components/language-provider"
+import Link from "next/link";
+import { Facebook, Instagram, Send, MapPin, Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 export default function Footer() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-card border-t border-primary/20">
@@ -13,45 +13,38 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="py-12 md:py-16 lg:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
-            
             {/* Brand Section - Takes more space */}
             <div className="lg:col-span-4">
               <h3 className="text-2xl md:text-3xl font-serif font-light tracking-[0.2em] mb-4 text-foreground">
                 FERGA GOLD
               </h3>
               <p className="text-foreground/70 leading-relaxed mb-6 text-sm max-w-sm">
-                {t("footerDescription") || "Timeless elegance and handcrafted jewelry of exceptional quality"}
+                {t("footerDescription") ||
+                  "Timeless elegance and handcrafted jewelry of exceptional quality"}
               </p>
-              
+
               {/* Social Media Icons */}
               <div className="flex items-center gap-3">
-                <a 
-                  href="#" 
+                <a
+                  href="https://www.facebook.com/share/18N9BvD2wo/?mibextid=wwXIfr"
                   className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
                   aria-label="Facebook"
                 >
                   <Facebook className="h-4 w-4" />
                 </a>
-                <a 
-                  href="#" 
+                <a
+                  href="https://www.instagram.com/fergagold?igsh=MWQwMDVwc291NnB1&utm_source=qr"
                   className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-4 w-4" />
                 </a>
-                <a 
-                  href="#" 
+                <a
+                  href="https://t.me/Fergagold1"
                   className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
-                  aria-label="Twitter"
+                  aria-label="Telgram"
                 >
-                  <Twitter className="h-4 w-4" />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-foreground/50 hover:text-primary hover:border-primary transition-all duration-300"
-                  aria-label="Youtube"
-                >
-                  <Youtube className="h-4 w-4" />
+                  <Send className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -64,32 +57,32 @@ export default function Footer() {
               <nav>
                 <ul className="space-y-3">
                   <li>
-                    <Link 
-                      href="/" 
+                    <Link
+                      href="/"
                       className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                     >
                       {t("home") || "Home"}
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      href="#about" 
+                    <Link
+                      href="#about"
                       className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                     >
                       {t("about") || "About"}
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      href="#direction" 
+                    <Link
+                      href="#direction"
                       className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                     >
                       {t("direction") || "Direction"}
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      href="#contact" 
+                    <Link
+                      href="#contact"
                       className="text-foreground/70 hover:text-primary transition-colors text-sm inline-block hover:translate-x-1 duration-200"
                     >
                       {t("contact") || "Contact"}
@@ -118,7 +111,7 @@ export default function Footer() {
                       {t("address") || "Address"}
                     </p>
                     <p className="text-foreground/70 text-sm leading-relaxed">
-                      Farg'ona Airoport 8A 
+                      Farg'ona Airoport 8A
                     </p>
                   </div>
                 </div>
@@ -132,11 +125,11 @@ export default function Footer() {
                     <p className="font-medium text-foreground text-sm mb-1">
                       {t("phone") || "Phone"}
                     </p>
-                    <a 
-                      href="tel:+998732261333" 
+                    <a
+                      href="tel:+998732261333"
                       className="text-foreground/70 hover:text-primary text-sm transition-colors"
                     >
-                      +998 73 226 13 33
+                      +998 77 277 09 96
                     </a>
                   </div>
                 </div>
@@ -150,8 +143,8 @@ export default function Footer() {
                     <p className="font-medium text-foreground text-sm mb-1">
                       {t("email") || "Email"}
                     </p>
-                    <a 
-                      href="mailto:info@fergagold.com" 
+                    <a
+                      href="mailto:info@fergagold.com"
                       className="text-foreground/70 hover:text-primary text-sm transition-colors break-all"
                     >
                       info@fergagold.com
@@ -167,17 +160,18 @@ export default function Footer() {
         <div className="border-t border-primary/20 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-foreground/60 text-sm text-center sm:text-left">
-              &copy; 2025 FERGA GOLD. {t("allRightsReserved") || "All rights reserved."}
+              &copy; 2025 FERGA GOLD.{" "}
+              {t("allRightsReserved") || "All rights reserved."}
             </p>
             <div className="flex items-center gap-6">
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="text-foreground/60 hover:text-primary text-sm transition-colors"
               >
                 {t("privacyPolicy") || "Privacy Policy"}
               </Link>
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="text-foreground/60 hover:text-primary text-sm transition-colors"
               >
                 {t("terms") || "Terms of Service"}
@@ -187,5 +181,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

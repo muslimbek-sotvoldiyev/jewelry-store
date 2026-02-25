@@ -94,8 +94,8 @@ export default function ProductPage({ params }: ProductPageProps) {
   }
 
   // Contact info
-  const CONTACT_PHONE = "+998901234567"
-  const CONTACT_TELEGRAM = "@fergagold"
+  const CONTACT_PHONE = "+998772770996"
+  const CONTACT_TELEGRAM = "@Fergagold1"
 
   return (
     <>

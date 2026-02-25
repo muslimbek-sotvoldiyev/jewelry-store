@@ -1,0 +1,120 @@
+
+
+Mon Feb 16 13:57:30 2026
+Command line: TestDisk
+
+TestDisk 7.2, Data Recovery Utility, February 2024
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 6.17.0-14-generic (#14-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan  9 17:01:16 UTC 2026) x86_64
+Compiler: GCC 14.2
+ext2fs lib: 1.47.2, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.5
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop38 - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - 00LPCX-21VHAT0, FW:1.02
+Disk /dev/loop0 - 4096 B - 8 sectors (RO), sector size=512
+Disk /dev/loop1 - 348 MB / 332 MiB - 680312 sectors (RO), sector size=512
+Disk /dev/loop10 - 70 MB / 66 MiB - 136912 sectors (RO), sector size=512
+Disk /dev/loop11 - 13 MB / 12 MiB - 26016 sectors (RO), sector size=512
+Disk /dev/loop12 - 23 MB / 22 MiB - 46224 sectors (RO), sector size=512
+Disk /dev/loop13 - 263 MB / 251 MiB - 515496 sectors (RO), sector size=512
+Disk /dev/loop14 - 263 MB / 251 MiB - 515416 sectors (RO), sector size=512
+Disk /dev/loop15 - 19 MB / 18 MiB - 37864 sectors (RO), sector size=512
+Disk /dev/loop16 - 366 MB / 349 MiB - 716176 sectors (RO), sector size=512
+Disk /dev/loop17 - 17 MB / 16 MiB - 33680 sectors (RO), sector size=512
+Disk /dev/loop18 - 541 MB / 516 MiB - 1057184 sectors (RO), sector size=512
+Disk /dev/loop19 - 557 MB / 531 MiB - 1088256 sectors (RO), sector size=512
+Disk /dev/loop2 - 352 MB / 336 MiB - 688232 sectors (RO), sector size=512
+Disk /dev/loop20 - 702 MB / 669 MiB - 1371720 sectors (RO), sector size=512
+Disk /dev/loop21 - 635 MB / 606 MiB - 1241248 sectors (RO), sector size=512
+Disk /dev/loop22 - 96 MB / 91 MiB - 187776 sectors (RO), sector size=512
+Disk /dev/loop23 - 414 MB / 394 MiB - 808920 sectors (RO), sector size=512
+Disk /dev/loop24 - 304 MB / 290 MiB - 595504 sectors (RO), sector size=512
+Disk /dev/loop25 - 182 MB / 174 MiB - 357184 sectors (RO), sector size=512
+Disk /dev/loop26 - 183 MB / 174 MiB - 357440 sectors (RO), sector size=512
+Disk /dev/loop27 - 15 MB / 14 MiB - 29528 sectors (RO), sector size=512
+Disk /dev/loop28 - 11 MB / 10 MiB - 22176 sectors (RO), sector size=512
+Disk /dev/loop29 - 18 MB / 17 MiB - 35936 sectors (RO), sector size=512
+Disk /dev/loop3 - 58 MB / 55 MiB - 113640 sectors (RO), sector size=512
+Disk /dev/loop30 - 53 MB / 50 MiB - 104296 sectors (RO), sector size=512
+Disk /dev/loop31 - 50 MB / 48 MiB - 98480 sectors (RO), sector size=512
+Disk /dev/loop32 - 589 KB / 576 KiB - 1152 sectors (RO), sector size=512
+Disk /dev/loop33 - 589 KB / 576 KiB - 1152 sectors (RO), sector size=512
+Disk /dev/loop34 - 198 MB / 189 MiB - 388376 sectors (RO), sector size=512
+Disk /dev/loop35 - 206 MB / 196 MiB - 402632 sectors (RO), sector size=512
+Disk /dev/loop36 - 87 MB / 83 MiB - 170472 sectors (RO), sector size=512
+Disk /dev/loop37 - 87 MB / 83 MiB - 170592 sectors (RO), sector size=512
+Disk /dev/loop4 - 58 MB / 55 MiB - 113648 sectors (RO), sector size=512
+Disk /dev/loop5 - 66 MB / 63 MiB - 130608 sectors (RO), sector size=512
+Disk /dev/loop6 - 66 MB / 63 MiB - 130608 sectors (RO), sector size=512
+Disk /dev/loop7 - 77 MB / 73 MiB - 151448 sectors (RO), sector size=512
+Disk /dev/loop8 - 77 MB / 73 MiB - 151464 sectors (RO), sector size=512
+Disk /dev/loop9 - 70 MB / 66 MiB - 136904 sectors (RO), sector size=512
+Disk /dev/nvme0n1 - 512 GB / 476 GiB - CHS 488386 64 32, sector size=512 - KINGSTON OM8PCP3512F-AB, S/N:50026B7683DB176F
+
+Partition table type (auto): Intel
+Disk /dev/sda - 500 GB / 465 GiB - 00LPCX-21VHAT0
+Partition table type: Intel
+Partition table type (auto): EFI GPT
+Disk /dev/nvme0n1 - 512 GB / 476 GiB - KINGSTON OM8PCP3512F-AB
+Partition table type: EFI GPT
+
+TestDisk exited normally.
+
+
+Mon Feb 16 14:19:53 2026
+Command line: TestDisk
+
+TestDisk 7.2, Data Recovery Utility, February 2024
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 6.17.0-14-generic (#14-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan  9 17:01:16 UTC 2026) x86_64
+Compiler: GCC 14.2
+ext2fs lib: 1.47.2, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.5
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Warning: can't get size for Disk /dev/loop38 - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - 00LPCX-21VHAT0, FW:1.02
+Disk /dev/loop0 - 4096 B - 8 sectors (RO), sector size=512
+Disk /dev/loop1 - 348 MB / 332 MiB - 680312 sectors (RO), sector size=512
+Disk /dev/loop10 - 70 MB / 66 MiB - 136912 sectors (RO), sector size=512
+Disk /dev/loop11 - 13 MB / 12 MiB - 26016 sectors (RO), sector size=512
+Disk /dev/loop12 - 23 MB / 22 MiB - 46224 sectors (RO), sector size=512
+Disk /dev/loop13 - 263 MB / 251 MiB - 515496 sectors (RO), sector size=512
+Disk /dev/loop14 - 263 MB / 251 MiB - 515416 sectors (RO), sector size=512
+Disk /dev/loop15 - 19 MB / 18 MiB - 37864 sectors (RO), sector size=512
+Disk /dev/loop16 - 366 MB / 349 MiB - 716176 sectors (RO), sector size=512
+Disk /dev/loop17 - 17 MB / 16 MiB - 33680 sectors (RO), sector size=512
+Disk /dev/loop18 - 541 MB / 516 MiB - 1057184 sectors (RO), sector size=512
+Disk /dev/loop19 - 557 MB / 531 MiB - 1088256 sectors (RO), sector size=512
+Disk /dev/loop2 - 352 MB / 336 MiB - 688232 sectors (RO), sector size=512
+Disk /dev/loop20 - 702 MB / 669 MiB - 1371720 sectors (RO), sector size=512
+Disk /dev/loop21 - 635 MB / 606 MiB - 1241248 sectors (RO), sector size=512
+Disk /dev/loop22 - 96 MB / 91 MiB - 187776 sectors (RO), sector size=512
+Disk /dev/loop23 - 414 MB / 394 MiB - 808920 sectors (RO), sector size=512
+Disk /dev/loop24 - 304 MB / 290 MiB - 595504 sectors (RO), sector size=512
+Disk /dev/loop25 - 182 MB / 174 MiB - 357184 sectors (RO), sector size=512
+Disk /dev/loop26 - 183 MB / 174 MiB - 357440 sectors (RO), sector size=512
+Disk /dev/loop27 - 15 MB / 14 MiB - 29528 sectors (RO), sector size=512
+Disk /dev/loop28 - 11 MB / 10 MiB - 22176 sectors (RO), sector size=512
+Disk /dev/loop29 - 18 MB / 17 MiB - 35936 sectors (RO), sector size=512
+Disk /dev/loop3 - 58 MB / 55 MiB - 113640 sectors (RO), sector size=512
+Disk /dev/loop30 - 53 MB / 50 MiB - 104296 sectors (RO), sector size=512
+Disk /dev/loop31 - 50 MB / 48 MiB - 98480 sectors (RO), sector size=512
+Disk /dev/loop32 - 589 KB / 576 KiB - 1152 sectors (RO), sector size=512
+Disk /dev/loop33 - 589 KB / 576 KiB - 1152 sectors (RO), sector size=512
+Disk /dev/loop34 - 198 MB / 189 MiB - 388376 sectors (RO), sector size=512
+Disk /dev/loop35 - 206 MB / 196 MiB - 402632 sectors (RO), sector size=512
+Disk /dev/loop36 - 87 MB / 83 MiB - 170472 sectors (RO), sector size=512
+Disk /dev/loop37 - 87 MB / 83 MiB - 170592 sectors (RO), sector size=512
+Disk /dev/loop4 - 58 MB / 55 MiB - 113648 sectors (RO), sector size=512
+Disk /dev/loop5 - 66 MB / 63 MiB - 130608 sectors (RO), sector size=512
+Disk /dev/loop6 - 66 MB / 63 MiB - 130608 sectors (RO), sector size=512
+Disk /dev/loop7 - 77 MB / 73 MiB - 151448 sectors (RO), sector size=512
+Disk /dev/loop8 - 77 MB / 73 MiB - 151464 sectors (RO), sector size=512
+Disk /dev/loop9 - 70 MB / 66 MiB - 136904 sectors (RO), sector size=512
+Disk /dev/nvme0n1 - 512 GB / 476 GiB - CHS 488386 64 32, sector size=512 - KINGSTON OM8PCP3512F-AB, S/N:50026B7683DB176F
+
+
+TestDisk exited normally.
