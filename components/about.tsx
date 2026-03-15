@@ -5,8 +5,10 @@ import { ChevronLeft, ChevronRight, MapPin, Phone, Mail } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
 const aboutImages = [
-  "/fergagoldabout1.png",
-  "/fergagoldabout2.png"
+  "/fergagoldabout1.JPG",
+  "/fergagoldabout2.png",
+  "/fergagoldabout111.png"
+
 ]
 
 export function About() {
