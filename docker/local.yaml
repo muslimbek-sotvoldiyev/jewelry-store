@@ -1,0 +1,13 @@
+services:
+  frontend:
+    image: registry.solara.uz/ci-user/jewelry-frontend:latest
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: frontend
+    env_file:
+      - ../.env
+    ports:
+      - "3000:3000"
+
+    restart: unless-stopped
