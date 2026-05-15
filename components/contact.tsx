@@ -77,6 +77,7 @@ export function Contact() {
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-1">Phone</p>
                 <p className="text-xs sm:text-sm text-foreground font-medium">+998 77 277 09 96</p>
+                <p className="text-xs sm:text-sm text-foreground font-medium">+998 94 700 31 32</p>
               </div>
 
               <div className="bg-card border border-border rounded-lg p-5 sm:p-6 text-center hover:border-primary/50 transition-colors">

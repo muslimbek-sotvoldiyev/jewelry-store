@@ -95,6 +95,7 @@ export function About() {
                   <div>
                     <p className="font-medium text-foreground">{t("phone")}</p>
                     <p className="text-muted-foreground text-xs md:text-sm">+998 77 277 09 96</p>
+                    <p className="text-muted-foreground text-xs md:text-sm">+998 94 700 31 32</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">

@@ -130,6 +130,12 @@ export default function Footer() {
                       className="text-foreground/70 hover:text-primary text-sm transition-colors"
                     >
                       +998 77 277 09 96
+                    </a> <br />
+                      <a
+                      href="tel:+998947003132"
+                      className="text-foreground/70 hover:text-primary text-sm transition-colors"
+                    >
+                      +998 94 700 31 32
                     </a>
                   </div>
                 </div>
