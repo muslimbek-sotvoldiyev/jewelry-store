@@ -3,6 +3,7 @@
 import { useLanguage } from "@/components/language-provider"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState, useRef } from "react"
+import Image from "next/image"
 
 const jewelryImages = [
   "/elegant-diamond-ring.png",
@@ -75,10 +76,13 @@ export function Hero() {
             transform: `translateY(${scrollY * 0.2}px) rotate(${-15 + scrollY * 0.02}deg)`,
           }}
         >
-          <img
+          <Image
             src={floatingImages[0].src || "/placeholder.svg"}
             alt={floatingImages[0].alt}
-            className="w-full h-full object-cover"
+            fill
+            sizes="288px"
+            className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -89,10 +93,13 @@ export function Hero() {
             transform: `translateY(${-scrollY * 0.15}px) rotate(${10 - scrollY * 0.03}deg)`,
           }}
         >
-          <img
+          <Image
             src={floatingImages[1].src || "/placeholder.svg"}
             alt={floatingImages[1].alt}
-            className="w-full h-full object-cover"
+            fill
+            sizes="288px"
+            className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -103,10 +110,13 @@ export function Hero() {
             transform: `translateY(${-scrollY * 0.25}px) rotate(${scrollY * 0.05}deg)`,
           }}
         >
-          <img
+          <Image
             src={floatingImages[2].src || "/placeholder.svg"}
             alt={floatingImages[2].alt}
-            className="w-full h-full object-cover"
+            fill
+            sizes="288px"
+            className="object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -117,10 +127,13 @@ export function Hero() {
             transform: `translateY(${scrollY * 0.3}px) rotate(${-5 + scrollY * 0.02}deg)`,
           }}
         >
-          <img
+          <Image
             src={floatingImages[3].src || "/placeholder.svg"}
             alt={floatingImages[3].alt}
-            className="w-full h-full object-cover"
+            fill
+            sizes="288px"
+            className="object-cover"
+            loading="lazy"
           />
         </div>
       </div>
@@ -172,16 +185,19 @@ export function Hero() {
           <div className="flex justify-center">
             <div className="relative w-20 h-20 animate-pulse-slow mt-2">
               {/* Logo */}
-              <img
+              <Image
                 src="/logonotext.png"
                 alt="Logo"
+                fill
+                sizes="80px"
                 draggable={false}
-                className="w-full h-full object-contain scale-110"
+                className="object-contain scale-110"
+                priority
               />
 
               {/* Ping effect */}
               <div className="absolute inset-0 animate-ping opacity-30 pointer-events-none">
-                <img src="/logonotext.png" alt="" className="w-full h-full object-contain" />
+                <Image src="/logonotext.png" alt="" fill sizes="80px" className="object-contain" />
               </div>
             </div>
           </div>

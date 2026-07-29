@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { CATEGORIES } from "@/lib/data"
 
@@ -23,11 +24,14 @@ export function Categories() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {CATEGORIES.slice(0, 4).map((category) => (
             <Link key={category.id} href={`/shop?category=${category.id}`} className="group cursor-pointer">
-              <div className="aspect-square overflow-hidden mb-3 md:mb-4 rounded-lg">
-                <img
+              <div className="relative aspect-square overflow-hidden mb-3 md:mb-4 rounded-lg">
+                <Image
                   src={category.image || "/placeholder.svg"}
                   alt={t(category.nameKey)}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
               <div className="text-center">

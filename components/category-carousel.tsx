@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { fetchProducts, type Product } from "@/lib/api-client"
 
@@ -10,6 +11,7 @@ import { fetchProducts, type Product } from "@/lib/api-client"
 function ProductCard({ product }: { product: Product }) {
   const { language } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imgError, setImgError] = useState(false);
 
   const hasMultipleImages = product.images && product.images.length > 1;
 
@@ -40,13 +42,14 @@ function ProductCard({ product }: { product: Product }) {
       <div className="relative w-full pt-[100%] bg-muted overflow-hidden">
         {product.images && product.images.length > 0 ? (
           <>
-            <img
-              src={product.images[currentImageIndex]}
+            <Image
+              src={imgError ? "/placeholder.svg" : product.images[currentImageIndex]}
               alt={product.name}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-              onError={(e) => {
-                e.currentTarget.src = '/placeholder.svg';
-              }}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover transition-opacity duration-300"
+              loading="lazy"
+              onError={() => setImgError(true)}
             />
 
             {/* Image counter */}

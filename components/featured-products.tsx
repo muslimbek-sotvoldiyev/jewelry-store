@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { PRODUCTS } from "@/lib/data"
 
@@ -22,13 +23,17 @@ export function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          {featuredProducts.map((product) => (
+          {featuredProducts.map((product, index) => (
             <Link key={product.id} href={`/product/${product.id}`} className="group cursor-pointer">
-              <div className="aspect-square overflow-hidden mb-2 lg:mb-3 bg-gray-50 rounded-lg">
-                <img
+              <div className="relative aspect-square overflow-hidden mb-2 lg:mb-3 bg-gray-50 rounded-lg">
+                <Image
                   src={product.image || "/placeholder.svg"}
                   alt={t(product.nameKey)}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority={index < 2}
+                  loading={index < 2 ? undefined : "lazy"}
                 />
               </div>
               <div className="text-center">

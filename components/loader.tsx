@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 type LoaderProps = {
   fullScreen?: boolean
@@ -12,12 +13,24 @@ export function Loader({ fullScreen = false, label = "Loading..." }: LoaderProps
     <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
       {/* Background jewelry images */}
       <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-10">
-        <img src="/luxury-gold-necklace-jewelry.jpg" alt="" className="w-full h-full object-cover" />
-        <img src="/elegant-diamond-ring.png" alt="" className="w-full h-full object-cover" />
-        <img src="/gold-bracelet-luxury-jewelry.jpg" alt="" className="w-full h-full object-cover" />
-        <img src="/pearl-earrings-elegant-jewelry.jpg" alt="" className="w-full h-full object-cover" />
-        <img src="/gold-pendant-necklace-jewelry.jpg" alt="" className="w-full h-full object-cover" />
-        <img src="/luxury-gold-watch-jewelry.jpg" alt="" className="w-full h-full object-cover" />
+        <div className="relative w-full h-full">
+          <Image src="/luxury-gold-necklace-jewelry.jpg" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
+        <div className="relative w-full h-full">
+          <Image src="/elegant-diamond-ring.png" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
+        <div className="relative w-full h-full">
+          <Image src="/gold-bracelet-luxury-jewelry.jpg" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
+        <div className="relative w-full h-full">
+          <Image src="/pearl-earrings-elegant-jewelry.jpg" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
+        <div className="relative w-full h-full">
+          <Image src="/gold-pendant-necklace-jewelry.jpg" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
+        <div className="relative w-full h-full">
+          <Image src="/luxury-gold-watch-jewelry.jpg" alt="" fill sizes="33vw" className="object-cover" loading="lazy" />
+        </div>
       </div>
 
       {/* Overlay gradient */}

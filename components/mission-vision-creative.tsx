@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 import { ArrowRight, Award, TrendingUp, Users, Globe } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
@@ -134,11 +135,13 @@ export default function Direction() {
                 
                 <div className="relative bg-card/40 border border-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-primary/30">
                   <div className="aspect-square relative">
-                    <img 
-                    src="/image.png"
-                      // src="https://images.unsplash.com/photo-1610375461246-83df859d849d?w=800&q=80" 
+                    <Image
+                      src="/image.png"
                       alt={t("missionImageAlt")}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
                     
@@ -187,12 +190,13 @@ export default function Direction() {
                 
                 <div className="relative bg-card/40 border border-primary/20 backdrop-blur-sm rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-primary/30">
                   <div className="aspect-square relative">
-                    <img 
-                    src="/image.png"
-
-                      // src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=800&q=80" 
+                    <Image
+                      src="/image.png"
                       alt={t("visionImageAlt")}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
                     

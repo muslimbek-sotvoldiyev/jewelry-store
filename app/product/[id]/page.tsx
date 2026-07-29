@@ -2,6 +2,7 @@
 
 import { use, useState, useEffect } from "react"
 import { notFound, useRouter } from "next/navigation"
+import Image from "next/image"
 import { ChevronLeft, ChevronRight, Share2, X, Phone, MessageCircle, ArrowLeft, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
@@ -29,6 +30,7 @@ export default function ProductPage({ params }: ProductPageProps) {
   const [product, setProduct] = useState<Product | null>(null)
   const [loading, setLoading] = useState(true)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imgError, setImgError] = useState(false)
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -120,14 +122,15 @@ export default function ProductPage({ params }: ProductPageProps) {
               <div className="aspect-square overflow-hidden rounded-lg mb-4 relative cursor-pointer bg-muted">
                 {product.images && product.images.length > 0 ? (
                   <>
-                    <img
-                      src={product.images[currentImageIndex]}
+                    <Image
+                      src={imgError ? "/placeholder.svg" : product.images[currentImageIndex]}
                       alt={product.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover hover:scale-105 transition-transform duration-300"
                       onClick={() => setIsImageModalOpen(true)}
-                      onError={(e) => {
-                        e.currentTarget.src = '/placeholder.svg'
-                      }}
+                      onError={() => setImgError(true)}
+                      priority
                     />
                     {product.images.length > 1 && (
                       <>
@@ -162,16 +165,19 @@ export default function ProductPage({ params }: ProductPageProps) {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden border-2 transition-all duration-300 ${
+                      className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded overflow-hidden border-2 transition-all duration-300 ${
                         index === currentImageIndex
                           ? "border-primary"
                           : "border-gray-300 hover:border-gray-400"
                       }`}
                     >
-                      <img
+                      <Image
                         src={image}
                         alt={`${product.name} ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="80px"
+                        className="object-cover"
+                        loading="lazy"
                       />
                     </button>
                   ))}
@@ -290,11 +296,15 @@ export default function ProductPage({ params }: ProductPageProps) {
           <div className="relative">
             {product.images && product.images.length > 0 && (
               <>
-                <img
-                  src={product.images[currentImageIndex]}
-                  alt={product.name}
-                  className="w-full h-auto"
-                />
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src={product.images[currentImageIndex]}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                    className="object-contain"
+                  />
+                </div>
                 <button
                   onClick={() => setIsImageModalOpen(false)}
                   className="absolute top-4 right-4 bg-white/80 hover:bg-white text-black rounded-full p-2"

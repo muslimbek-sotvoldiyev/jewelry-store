@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/components/language-provider"
 import { PRODUCTS } from "@/lib/data"
 
@@ -20,11 +21,14 @@ export function RecommendedCollection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2 md:gap-3">
           {recommendedProducts.map((product) => (
             <Link key={product.id} href={`/product/${product.id}`} className="group cursor-pointer">
-              <div className="aspect-[3/4] overflow-hidden mb-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
-                <img
+              <div className="relative aspect-[3/4] overflow-hidden mb-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <Image
                   src={product.image || "/placeholder.svg"}
                   alt={t(product.nameKey)}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
               <div className="text-center px-1">

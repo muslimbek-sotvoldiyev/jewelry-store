@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
+import Image from "next/image"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { LanguageProvider, useLanguage } from "@/components/language-provider"
@@ -11,6 +12,7 @@ import { fetchCategories, fetchProducts, type Category, type Product } from "@/l
 function ProductCard({ product, language }: { product: Product; language: string }) {
   const router = useRouter()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imgError, setImgError] = useState(false)
 
   const hasMultipleImages = product.images && product.images.length > 1
 
@@ -44,13 +46,14 @@ function ProductCard({ product, language }: { product: Product; language: string
       <div className="relative w-full pt-[75%] bg-muted overflow-hidden">
         {product.images && product.images.length > 0 ? (
           <>
-            <img
-              src={product.images[currentImageIndex]}
+            <Image
+              src={imgError ? "/placeholder.svg" : product.images[currentImageIndex]}
               alt={product.name}
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-              onError={(e) => {
-                e.currentTarget.src = '/placeholder.svg'
-              }}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover transition-all duration-500"
+              loading="lazy"
+              onError={() => setImgError(true)}
             />
 
             {/* Image counter badge */}

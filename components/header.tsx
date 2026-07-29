@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -63,15 +64,14 @@ function Header() {
                 ${isScrolled ? "w-10 h-10 sm:w-11 sm:h-11" : "w-12 h-12 sm:w-14 sm:h-14"}
               `}
             >
-              <img
+              <Image
                 src="/logowhite-removebg.png"
                 alt="FERGAGOLD Logo"
-                className="w-full h-full object-contain"
+                fill
+                sizes="56px"
+                className="object-contain"
                 draggable={false}
-                width={56}
-                height={56}
-                loading="eager"
-                decoding="async"
+                priority
               />
             </div>
           </Link>

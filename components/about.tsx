@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { ChevronLeft, ChevronRight, MapPin, Phone, Mail } from "lucide-react"
 import { useLanguage } from "@/components/language-provider"
 
@@ -27,11 +28,14 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Images Carousel */}
           <div className="relative order-2 lg:order-1">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg">
-              <img
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+              <Image
                 src={aboutImages[currentImageIndex] || "/placeholder.svg"}
                 alt={`About FERGAGOLD ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                loading="lazy"
               />
             </div>
 
@@ -54,14 +58,17 @@ export function About() {
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
-                  className={`w-12 h-8 md:w-16 md:h-12 rounded overflow-hidden border-2 transition-all duration-300 ${
+                  className={`relative w-12 h-8 md:w-16 md:h-12 rounded overflow-hidden border-2 transition-all duration-300 ${
                     index === currentImageIndex ? "border-primary" : "border-border"
                   }`}
                 >
-                  <img
+                  <Image
                     src={image || "/placeholder.svg"}
                     alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                    loading="lazy"
                   />
                 </button>
               ))}
